@@ -4,9 +4,14 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Check, Sparkles, IndianRupee } from 'lucide-react';
 import { PRICING_TIERS } from '@/app/utils/landing-data';
+import { useTheme } from '../../context/ThemeContext';
 
 export const PricingSection: React.FC = () => {
+  
+  const { theme } = useTheme();
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'annual'>('monthly');
+
+  const isDark = theme === 'dark';
 
   return (
     <section id="pricing" className="py-6 bg-slate-950 relative">

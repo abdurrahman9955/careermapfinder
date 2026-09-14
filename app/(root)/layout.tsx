@@ -9,8 +9,18 @@ import { ThemeProviderDownload } from '../context/ThemeContextDownload';
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"],});
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"],});
 
-export const metadata: Metadata = { title: "InfoBeatLive Academy",
-  description: `Structured academic and professional learning platform for serious learners.`,};
+export const metadata: Metadata = {
+  title: 'CareerMapFinder | Career Discovery & Regional Roadmaps for Indian Students',
+  description: 'Discover your better study path, regional entrance exams, state quotas, entry salary expectations, and living costs across India.',
+  openGraph: {
+    title: 'CareerMapFinder | Indian Career Ecosystem',
+    description: 'Comprehensive career discovery, regional state roadmaps, exam cutoffs, and ROI calculators tailored for Indian students and parents.',
+    url: 'https://www.careermapfinder.com',
+    siteName: 'CareerMapFinder',
+    locale: 'en_IN',
+    type: 'website',
+  },
+};
 
 
 export default function RootLayout({ children,}: Readonly<{ children: React.ReactNode;}>) {

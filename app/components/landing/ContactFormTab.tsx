@@ -4,8 +4,10 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, CheckCircle2, MessageSquare } from 'lucide-react';
 import { ContactFormData } from '@/types/landing';
+import { useTheme } from '../../context/ThemeContext';
 
 export const ContactFormTab: React.FC = () => {
+   const { theme } = useTheme();
   const [formData, setFormData] = useState<ContactFormData>({
     fullName: '',
     email: '',
@@ -27,10 +29,12 @@ export const ContactFormTab: React.FC = () => {
     }, 800);
   };
 
+  const isDark = theme === 'dark';
+
   return (
-    <section id="contact" className="py-6 bg-slate-900/60 border-t border-slate-800/80 relative">
+    <section id="contact" className="py-6 bg-slate-950 border-t border-slate-800/80 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-12  gap-12 items-center">
           
           {/* Left Info */}
           <div className="lg:col-span-5">
@@ -38,27 +42,24 @@ export const ContactFormTab: React.FC = () => {
               Get In Touch
             </span>
             <h2 className="text-sm sm:text-2xl font-extrabold text-white tracking-tight mt-3">
-              Have Questions? Speak with an Advisor
+              Have Questions? Speak with Our Supprt Center
             </h2>
             <p className="text-slate-400 text-sm mt-4 leading-relaxed">
               Whether you are a student exploring entrance exam choices, a parent looking for tuition fee breakdowns, or a school seeking administrative access.
             </p>
 
-            <div className="mt-8 space-y-4">
+            <div className="flex flex-row flex-wrap justify-between mt-8 space-y-4">
               <div className="flex items-center gap-3 text-slate-300 text-xs">
                 <MessageSquare className="w-4 h-4 text-indigo-400" />
                 <span>Email Support: <strong className="text-white">hello@careermapfinder.com</strong></span>
               </div>
-              <div className="flex items-center gap-3 text-slate-300 text-xs">
-                <MessageSquare className="w-4 h-4 text-violet-400" />
-                <span>Institutional Partnerships: <strong className="text-white">hello@careermapfinder.com</strong></span>
-              </div>
             </div>
+
           </div>
 
           {/* Right Form Card */}
           <div className="lg:col-span-7">
-            <div className="bg-slate-950 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl">
+            <div className="bg-slate-950 border border-slate-800 rounded-2xl p-6 sm:p- shadow-2xl">
               {isSubmitted ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
@@ -138,7 +139,7 @@ export const ContactFormTab: React.FC = () => {
                   <div>
                     <label className="block text-xs font-medium text-slate-300 mb-1">Your Message / Career Concern</label>
                     <textarea
-                      rows={4}
+                      rows={5}
                       required
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}

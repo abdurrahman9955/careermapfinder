@@ -17,16 +17,21 @@ import {
   Globe2,
 } from 'lucide-react';
 import { STATE_DISCOVERY_DATA } from '@/app/utils/landing-data';
+import { useTheme } from '../../context/ThemeContext';
 
 type CategoryFilter = 'all' | 'states' | 'uts';
 
 export const RegionalStateSelector: React.FC = () => {
+  
+  const { theme } = useTheme();
   const [activeStateId, setActiveStateId] = useState<string>('mh');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [categoryFilter, setCategoryFilter] = useState<CategoryFilter>('all');
   const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
 
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const isDark = theme === 'dark';
 
   // Filter logic
   const filteredData = useMemo(() => {
@@ -69,7 +74,8 @@ export const RegionalStateSelector: React.FC = () => {
   return (
     <section id="state-discovery" className="py-6 bg-slate-950 border-y border-slate-800/80 relative overflow-hidden">
       {/* Glow Effects */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-indigo-600/10 blur-[120px] pointer-events-none rounded-full" />
+      <div className="absolute top-0 left-1/2  w-full max-w-7xl h-96 bg-indigo-600/10 
+      blur-[120px] pointer-events-none rounded-full" />
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-violet-600/10 blur-[100px] pointer-events-none rounded-full" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
