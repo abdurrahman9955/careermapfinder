@@ -34,3 +34,215 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+Career Information
+Career Name
+Career Overview
+What Does This Professional Do?
+Why Choose This Career?
+Who Is This Career Suitable For?
+Skills Required
+Important Subjects
+Work Environment
+Typical Day / Life in This Career🎓 Education & Eligibility
+
+Class 10 Requirements
+Class 11–12 Stream
+Subjects Required
+Minimum Educational Qualification
+Age Limit
+Nationality / Other Eligibility
+Physical/Medical Requirements — where applicable
+Course Options
+Course Duration
+Degree/Diploma Required
+
+📝 Entrance Exams
+Entrance Exam(s)
+National-Level Exams
+State-Level Exams
+College/University-Level Exams
+Exam Eligibility
+Exam Pattern
+Subjects in Exam
+Number of Questions
+Marking Scheme
+Exam Frequency
+Application Process
+Application Fees
+Important Dates
+Exam Preparation Strategy
+Best Books / Study Resources
+Previous-Year Questions
+Mock Tests
+Preparation Timeline
+
+🏫 Admission
+How Admission Works
+Counselling Process
+State-wise Counselling
+Quota/Reservation Information
+Government Colleges
+Private Colleges
+Top Colleges
+College Selection Guide
+Expected Cutoffs — where applicable Fees
+Scholarships
+
+🛣️ Career Journey
+Step-by-Step Career Path
+Career Roadmap 
+Internship / Training
+Licensing / Registration — where applicable
+First Job 
+Entry-Level Roles
+Mid-Level Roles
+Senior-Level Roles
+Specializations
+Super-Specializations
+Higher Education
+Alternative Career Paths
+
+💼 Jobs & Opportunities
+Government Jobs
+Private Jobs
+Self-Employment / Private Practice
+Industries That Hire
+Top Employers
+Work Locations
+India vs Abroad Opportunities
+Freelancing / Independent Work — where applicable
+
+💰 Money
+Starting Salary
+Average Salary
+Experienced Salary
+Highest Potential Earnings
+Government Salary
+Private Sector Salary
+Self-Employment Earnings
+Salary by Experience
+Salary by Specialization
+Factors Affecting Salary
+
+🌍 Abroad
+Countries With Good Opportunities
+Required Exams Abroad
+Licensing Requirements
+Education Requirements
+Salary Abroad
+How to Move Abroad
+
+⚖️ Reality of the Career
+Advantages
+Disadvantages
+Challenges
+Work-Life Balance
+Working Hours
+Stress Level
+Job Security
+Competition
+Career Growth
+Future Demand
+
+🤖 Future & Technology
+Future of the Career
+Impact of AI
+Impact of Automation
+New Opportunities
+Emerging Specializations
+
+
+‎1. Complete career database — thousands of career pages.
+‎2. Career search and filtering.
+‎3. Career pathways/roadmaps showing the steps from school → education → exams → career.
+‎4. Eligibility, age limits, exams, fees, salary, skills and other career information.
+‎5. Science, Commerce, Arts and other streams.
+‎6. Personalized career recommendations using questionnaires.
+‎7. AI-based career guidance/chatbot.
+‎8. Career comparison — compare 2–5 careers side by side.
+‎9. College/course information.
+‎10. Entrance-exam information.
+‎11. Government/private career information.
+‎12. User accounts and profiles.
+‎13. Save/bookmark careers.
+‎14. Recently viewed careers.
+‎15. Personalized dashboard.
+‎16. Search history.
+‎17. Comments and feedback.
+‎18. Community/discussion sections.
+‎19. Videos embedded into career/course pages.
+‎20. Quizzes and career tests.
+‎21. Mock tests and practice questions.
+‎22. User progress tracking.
+‎23. Notifications through browser/email.
+‎24. Payments and subscriptions.
+‎25. Advertisements.
+‎26. Analytics — track what users search for and which careers they view.
+‎27. SEO — individual career pages can appear on Google.
+‎28. Social sharing — users can share career pages.
+‎29. Multilingual content.
+‎30. Responsive design that works on phones, tablets and computers.
+‎31. Login using Google/email/phone.
+‎32. AI-generated personalized career roadmaps.
+‎33. Recommendation engine based on interests, marks, subjects and goals.
+‎34. Parent/student accounts and potentially separate dashboards.
+‎35. Online counselling/mentor booking.
+‎36. Career-related calculators — salary, eligibility, age, exam attempts, etc.
+‎37. Admin panel for your team to add/update careers.
+‎38. Database that can continuously expand.
+‎39. Referral systems.
+‎40. Leaderboards, badges and gamification.
+
+
+
+Hindi: 43.63% (~528 million speakers), mainly spoken in northern and central regions.
+Bengali: 8.30% (~97.2 million speakers), prominent in eastern states like West Bengal.
+Marathi: 6.86% (~83 million speakers), primarily spoken in Maharashtra.
+Telugu: 6.70% (~81.1 million speakers), a major Dravidian language in Andhra Pradesh and Telangana.
+Tamil: 5.70% (~69 million speakers), widely spoken in Tamil Nadu and globally.
+Gujarati: 4.58% (~55.4 million speakers), the primary language in Gujarat.
+Urdu: 4.19% (~50.7 million speakers), spoken across various parts of the country.
+Kannada: 3.61% (~43.7 million speakers), dominant in Karnataka.
+Odia: 3.10% (~37.5 million speakers), official language of Odisha.
+Malayalam: 2.88% (~34.8 million speakers), spoken in Kerala
+
+1. Scholarship Finder
+Personalized scholarship discovery based on student eligibility.
+
+2. Alternative Career / Plan B Generator
+Shows alternative paths if the student's first-choice career doesn't work.
+
+3. Mock tests 
+Sample questions to practice any exams like JEE or NEET.
+
+4. Day in the Life
+Realistic career experiences and daily responsibilities.
+
+5. Career-to-Skills Roadmap
+Shows exactly which skills are needed for a selected career.
+
+6. Personalized 30/60/90-Day Plans
+Converts a long-term goal into daily/weekly tasks.
+
+7. AI friend bot 
+A AI bot which helps to maintain a good relationship with user as a friend.
+
+8. Real Student Experiences
+Stories, interviews, mistakes, preparation journeys and advice.
+
+9. Parent Mode
+Separate parent dashboard and parent-friendly career information.
+
+10. Multilingual Career Guidance
+Career information and AI guidance in multiple Indian languages.
+
+11. Personal Career Profile
+Long-term personalization of goals, interests, progress and plans LIKE CV (RESUME)
+
+12. AI Career Companion
+An ongoing AI companion that helps students stay on track.
+
+13. Daily Accountability System
+Reminders, daily tasks, streaks, progress tracking and plan adjustment.

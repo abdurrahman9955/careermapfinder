@@ -34,46 +34,45 @@ interface NavItem {
 
 const NAV_ITEMS: NavItem[] = [
   {
-    title: 'Dashboard',
+    title: 'Main Dashboard',
     href: '/dashboard',
     icon: LayoutDashboard,
   },
   {
-    title: 'Stream Explorer',
-    href: '/dashboard',
+    title: 'Stream & Career Explorer',
+    href: '/dashboard?stream-explorer',
     icon: Compass,
     badge: '',
   },
-  {
-    title: 'Colleges & Exams',
-    href: '/dashboard',
-    icon: GraduationCap,
-    children: [
-      { title: 'College Finder', href: '/dashboard' },
-      { title: 'Cutoff Predictor', href: '/dashboard' },
-      { title: 'Exams Calendar', href: '/dashboard' },
-    ],
-  },
-  {
-    title: 'Compare Programs',
-    href: '/dashboard',
-    icon: GitCompare,
-  },
-  {
-    title: 'ROI Calculator',
-    href: '/dashboard',
-    icon: Calculator,
-  },
-  {
-    title: 'Saved Roadmaps',
-    href: '/dashboard',
+    {
+    title: 'Skills & Career Roadmap', 
+    href: '/dashboard?skills-roadmap',
     icon: Bookmark,
   },
   {
+    title: 'Programs Comparison',
+    href: '/dashboard?programs-comparison',
+    icon: GitCompare,
+  },
+  {
     title: 'Counseling Sessions',
-    href: '/dashboard',
+    href: '/dashboard?counselling-session',
     icon: Calendar,
     badge: 'Pro',
+  },
+  {
+    title: 'Skills & Career Tests',
+    href: '/dashboard?test',
+    icon: GraduationCap,
+    children: [
+      { title: 'Skills Assessments', href: '/dashboard?test-skills' },
+      { title: 'Career Assessments', href: '/dashboard?test-career' },
+    ],
+  },
+  {
+    title: 'Scholarship Explorer',
+    href: '/dashboard?scholarship',
+    icon: Calculator,
   },
   {
     title: 'State Discovery',
