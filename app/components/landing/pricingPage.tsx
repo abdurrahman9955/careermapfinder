@@ -65,7 +65,7 @@ export const PricingSection: React.FC = () => {
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
-              Monthly Billing
+              Monthly
             </button>
             <button
               onClick={() => setBillingCycle('annual')}
@@ -77,7 +77,7 @@ export const PricingSection: React.FC = () => {
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
-              <span>Annual Billing</span>
+              <span>Annually</span>
               <span
                 className={`text-[10px] px-1.5 py-0.5 rounded border ${
                   isDark

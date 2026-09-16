@@ -45,23 +45,12 @@ const NAV_ITEMS: NavItem[] = [
     badge: '',
   },
     {
-    title: 'Skills & Career Roadmap', 
+    title: 'Stream & Career Guide', 
     href: '/dashboard?skills-roadmap',
     icon: Bookmark,
   },
   {
-    title: 'Programs Comparison',
-    href: '/dashboard?programs-comparison',
-    icon: GitCompare,
-  },
-  {
-    title: 'Counseling Sessions',
-    href: '/dashboard?counselling-session',
-    icon: Calendar,
-    badge: 'Pro',
-  },
-  {
-    title: 'Skills & Career Tests',
+    title: 'Stream & Career Tests',
     href: '/dashboard?test',
     icon: GraduationCap,
     children: [
@@ -70,8 +59,19 @@ const NAV_ITEMS: NavItem[] = [
     ],
   },
   {
+    title: 'Counseling Sessions',
+    href: '/dashboard/counselling-session',
+    icon: Calendar,
+    badge: 'Pro',
+  },
+  {
+    title: 'Colleges & Requirements',
+    href: '/dashboard?programs-comparison',
+    icon: GitCompare,
+  },
+  {
     title: 'Scholarship Explorer',
-    href: '/dashboard?scholarship',
+    href: '/dashboard/scholarships',
     icon: Calculator,
   },
   {
@@ -85,7 +85,7 @@ const NAV_ITEMS: NavItem[] = [
     icon: Settings,
   }, 
   {
-    title: 'Pricing System',
+    title: 'Subscription (Pro)',
     href: '/dashboard/pricing',
     icon: Currency,
   }, 
