@@ -66,7 +66,7 @@ const NAV_ITEMS: NavItem[] = [
   },
   {
     title: 'Colleges & Requirements',
-    href: '/dashboard?programs-comparison',
+    href: '/dashboard/universities',
     icon: GitCompare,
   },
   {

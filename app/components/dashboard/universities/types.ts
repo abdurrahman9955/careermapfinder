@@ -71,13 +71,12 @@ export interface University {
   placements: PlacementInfo;
   facilities: string[];
   notablePoints: string[];
+  stateOrigin?: string;
 }
 
 export interface StateUniversityBatch {
   id: string;
   country: string;
   state: string;
-  totalInstitutionsInBatch: number;
-  hasMoreBatches: boolean;
   universities: University[];
 }

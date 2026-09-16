@@ -80,7 +80,7 @@ export interface UniversityBatch {
   universities: University[];
 }
 
-export const utterPradeshUniversities: UniversityBatch = {
+export const uttarPradeshUniversities: UniversityBatch = {
   id: "uttar_pradesh_26",
   country: "India",
   state: "Uttar Pradesh",

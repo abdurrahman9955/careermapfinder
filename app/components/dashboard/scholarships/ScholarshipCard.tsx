@@ -65,7 +65,7 @@ export const ScholarshipCard: React.FC<CardProps> = ({ scholarship, isDark }) =>
 
             <span
               className={`text-[10px] border py-1 px-2 rounded-full font-medium flex items-center gap-1 ${
-                isDark ? 'border-indio-700 text-indigo-400' : 'bg-indigo-50 border-indigo-300 text-indigo-500'
+                isDark ? 'text-indigo-100 border-slate-700 bg-indigo-950/80' : 'bg-indigo-50 border-slate-300 text-indigo-900'
               }`}
             >
               <MapPin className="w-3 h-3 text-indigo-500" />
@@ -74,9 +74,9 @@ export const ScholarshipCard: React.FC<CardProps> = ({ scholarship, isDark }) =>
           </div>
 
           {/* Title & Provider */}
-          <h3 className="text-base font-bold line-clamp-2 leading-snug">{scholarship.title}</h3>
+          <h3 className="text-base font-bold line-clamp-1 leading-snug">{scholarship.title}</h3>
           <p
-            className={`text-xs mt-1 font-medium ${
+            className={`text-xs mt-1 line-clamp-1 leading-snug font-medium ${
               isDark ? 'text-slate-400' : 'text-slate-500'
             }`}
           >
@@ -85,7 +85,7 @@ export const ScholarshipCard: React.FC<CardProps> = ({ scholarship, isDark }) =>
 
           {/* Description */}
           <p
-            className={`text-xs mt-3 line-clamp-3 leading-relaxed ${
+            className={`text-xs mt-3 line-clamp-2 leading-relaxed ${
               isDark ? 'text-slate-300' : 'text-slate-600'
             }`}
           >
