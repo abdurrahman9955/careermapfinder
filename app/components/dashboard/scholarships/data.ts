@@ -62,7 +62,6 @@ const ALL_BATCHES: ScholarshipBatch[] = [
   nationalLevelScholarships,
 ];
 
-// Flattens all regional datasets into a single queryable list
 export const ALL_SCHOLARSHIPS: Scholarship[] = ALL_BATCHES.flatMap((batch) =>
   batch.scholarships.map((sch) => ({
     ...sch,
