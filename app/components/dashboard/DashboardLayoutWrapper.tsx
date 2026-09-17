@@ -26,12 +26,12 @@ export const DashboardLayoutWrapper: React.FC<DashboardLayoutWrapperProps> = ({ 
       />
 
       {/* Main Content Area */}
-      <div className="lg:pl-64 flex flex-col min-h-screen">
+      <div className="lg:pl-52 flex flex-col min-h-screen">
         {/* Topbar Navigation */}
         <Topbar onOpenMobileSidebar={() => setMobileSidebarOpen(true)} />
 
         {/* Page Main Content */}
-        <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto">
+        <main className="flex-1 p-4 sm:p-6 lg:p-6 max-w-8xl w-full mx-auto">
           {children}
         </main>
       </div>

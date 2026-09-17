@@ -47,7 +47,7 @@ export const Topbar: React.FC<TopbarProps> = ({ onOpenMobileSidebar }) => {
                      ${theme === 'dark' ? ' hover:bg-zinc-700 border border-slate-700' 
                         : 'hover:bg-zinc-100 border border-slate-300'}`}
                       title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'} >
-                    <span className='flex flex-row gap-2'> <PlusCircle className=' w-5'/>Create New Career Map </span>
+                    <span className='flex flex-row gap-2'> <PlusCircle className=' w-5'/>Explore New Career </span>
                   </button>
                 </Link>
               </div>

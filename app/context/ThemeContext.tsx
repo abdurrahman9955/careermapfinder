@@ -22,12 +22,14 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   useEffect(() => {
     const storedTheme = Cookies.get('theme');
     if (storedTheme === 'dark') {
       setTheme('dark');
+    }else{
+      setTheme('light');
     }
   }, []);
 

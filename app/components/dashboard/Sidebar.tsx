@@ -20,7 +20,8 @@ import {
   Currency,
   MessageCircle,
   HelpCircle,
-  Globe2
+  Globe2,
+  HomeIcon
 } from 'lucide-react';
 
 interface NavItem {
@@ -28,6 +29,8 @@ interface NavItem {
   href: string;
   icon: React.ElementType;
   badge?: string;
+  target?:string;
+  rel?:string;
   children?: { title: string; href: string }[];
 }
 
@@ -37,49 +40,74 @@ const NAV_ITEMS: NavItem[] = [
     href: '/dashboard?career-explorer',
     icon: LayoutDashboard,
     badge: '',
+    target:"", 
+    rel:"",
   },
   {
     title: 'Board Exams',
     href: '/dashboard?board-exams',
     icon: GraduationCap,
     badge: '',
+    target:"", 
+    rel:"",
   },
   {
     title: 'Career Exams',
     href: '/dashboard?career-exams',
     icon: GraduationCap,
     badge: '',
+    target:"", 
+    rel:"",
   },
   {
     title: 'Universities',
     href: '/dashboard/universities',
     icon: GitCompare,
+    target:"", 
+    rel:"",
   },
   {
     title: 'Counseling (Pro)',
     href: '/dashboard/counselling-session',
     icon: Calendar,
     badge: '',
+    target:"", 
+    rel:"",
   },
   {
     title: 'State Discovery',
     href: '/dashboard/state-discovery',
     icon: Globe2,
+    target:"", 
+    rel:"",
   }, 
   {
     title: 'Account Settings',
     href: '/dashboard/settings',
     icon: Settings,
+    target:"", 
+    rel:"",
   }, 
   {
     title: 'Subscription (Pro)',
     href: '/dashboard/pricing',
     icon: Currency,
+    target:"", 
+    rel:"",
   }, 
   {
     title: 'Contact Support',
     href: '/dashboard/contact',
     icon: HelpCircle,
+    target:"", 
+    rel:"",
+  },
+  {
+    title: 'Go Home Page',
+    href: '/#',
+    icon: HomeIcon,
+    target:"_blank", 
+    rel:"noreferrer",
   },
  
 ];
@@ -115,7 +143,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
     >
       {/* Brand Header */}
       <div
-        className={`h-16 px-6 flex items-center justify-between border-b shrink-0 ${
+        className={`h-16 px-2 flex items-center justify-between border-b shrink-0 ${
           isDark ? 'border-slate-700' : 'border-slate-300'
         }`}
       >
@@ -127,7 +155,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
           </div>
           <div className="flex flex-col">
             <span
-              className={`font-extrabold text-base tracking-tight leading-none ${
+              className={`font-extrabold text-sm tracking-tight leading-none ${
                 isDark ? 'text-white' : 'text-slate-900'
               }`}
             >
@@ -137,7 +165,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               </span>
             </span>
             <span
-              className={`text-[10px] font-serif font-bold uppercase tracking-widest mt-1 ${
+              className={`text-[9px] font-serif font-bold uppercase tracking-widest mt-1 ${
                 isDark ? 'text-slate-400' : 'text-slate-500'
               }`}
             >
@@ -234,6 +262,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
                             <Link
                               key={subItem.title}
                               href={subItem.href}
+                              
                               onClick={onClose}
                               className={`block px-3 py-2 rounded-lg text-xs font-medium transition-colors ${
                                 subActive
@@ -256,6 +285,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               ) : (
                 <Link
                   href={item.href}
+                  target={item.target}  rel={item.rel}
                   onClick={onClose}
                   className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl 
                     text-xs sm:text-sm font-medium transition-all ${
@@ -347,7 +377,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
   return (
     <>
       {/* Desktop Persistent Sidebar */}
-      <aside className="hidden lg:block fixed top-0 left-0 bottom-0 w-64 z-30">
+      <aside className="hidden lg:block fixed top-0 left-0 bottom-0 w-52 z-30">
         {sidebarContent}
       </aside>
 

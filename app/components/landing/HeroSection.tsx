@@ -65,7 +65,8 @@ export const HeroSection: React.FC = () => {
               className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto"
             >
               <a
-                href="#services"
+                href="/dashboard"
+                target="_blank"  rel="noreferrer"
                 className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-indigo-800 
                 via-indigo-700 to-violet-800 hover:from-indigo-700 hover:to-violet-700 
                 text-white font-semibold text-sm shadow-xl shadow-indigo-800/20 

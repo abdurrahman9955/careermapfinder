@@ -15,13 +15,9 @@ export const setTokensAndUserId = (accessToken: string | null, refreshToken: str
     }
 };
 
-//  export const BASE_URL: string =  'http://localhost:8080/api';
+ export const BASE_URL: string =  'http://localhost:8080/api';
 
-//  export const SOCKET_BASE_URL: string =  'http://localhost:8080';
-
-export const BASE_URL: string =  'https://api.infobeatlive.com/api';  
-
-export const SOCKET_BASE_URL: string = 'https://api.infobeatlive.com';  
+ export const SOCKET_BASE_URL: string =  'http://localhost:8080'; 
 
  const api = axios.create({
     baseURL: BASE_URL,
