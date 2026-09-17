@@ -1,5 +1,4 @@
 'use client';
-
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -34,46 +33,34 @@ interface NavItem {
 
 const NAV_ITEMS: NavItem[] = [
   {
-    title: 'Main Dashboard',
-    href: '/dashboard',
+    title: 'Career Explorer',
+    href: '/dashboard?career-explorer',
     icon: LayoutDashboard,
-  },
-  {
-    title: 'Stream & Career Explorer',
-    href: '/dashboard?stream-explorer',
-    icon: Compass,
     badge: '',
   },
-    {
-    title: 'Stream & Career Guide', 
-    href: '/dashboard?skills-roadmap',
-    icon: Bookmark,
-  },
   {
-    title: 'Board & Career Exams',
-    href: '/dashboard?test',
+    title: 'Board Exams',
+    href: '/dashboard?board-exams',
     icon: GraduationCap,
-    children: [
-      { title: 'Board Exams', href: '/dashboard?test-skills' },
-      { title: 'Career Exams', href: '/dashboard?test-career' },
-    ],
+    badge: '',
   },
   {
-    title: 'Counseling Sessions',
-    href: '/dashboard/counselling-session',
-    icon: Calendar,
-    badge: 'Pro',
+    title: 'Career Exams',
+    href: '/dashboard?career-exams',
+    icon: GraduationCap,
+    badge: '',
   },
   {
-    title: 'Colleges & Requirements',
+    title: 'Universities',
     href: '/dashboard/universities',
     icon: GitCompare,
   },
-  // {
-  //   title: 'Scholarship Explorer',
-  //   href: '/dashboard/scholarships',
-  //   icon: Calculator,
-  // },
+  {
+    title: 'Counseling (Pro)',
+    href: '/dashboard/counselling-session',
+    icon: Calendar,
+    badge: '',
+  },
   {
     title: 'State Discovery',
     href: '/dashboard/state-discovery',

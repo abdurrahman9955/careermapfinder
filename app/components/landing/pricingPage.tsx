@@ -92,7 +92,7 @@ export const PricingSection: React.FC = () => {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mt-8">
           {PRICING_TIERS.map((tier) => {
             const displayPrice =
               billingCycle === 'annual' ? tier.priceAnnual : tier.priceMonthly;
