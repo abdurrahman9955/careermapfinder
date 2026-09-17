@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
-import { Search, Filter, Globe2, GraduationCap, X, SlidersHorizontal, BookOpen } from 'lucide-react';
+import { useState, useMemo } from 'react';
+import { Search, Globe2, X, BookOpen } from 'lucide-react';
 import { DashboardLayoutWrapper } from '../DashboardLayoutWrapper';
 import { useTheme } from '../../../context/ThemeContext';
 import { ALL_SCHOLARSHIPS, ALL_STATES } from './data';
@@ -12,15 +12,15 @@ export default function ScholarshipsPage() {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
 
-  // Filters State
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedState, setSelectedState] = useState<string>('all');
   const [selectedType, setSelectedType] = useState<ScholarshipType | 'all'>('all');
+   
+  const [selectedCategory, setSelectedCategory] = useState<string | 'all'>('all');
 
-  // Multi-attribute Filter Logic
   const filteredScholarships = useMemo(() => {
     return ALL_SCHOLARSHIPS.filter((item) => {
-      // Free-text query match
+ 
       const matchesSearch =
         item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         item.provider.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -28,7 +28,6 @@ export default function ScholarshipsPage() {
           c.toLowerCase().includes(searchQuery.toLowerCase())
         );
 
-      // State or Pan-India match
       const matchesState =
         selectedState === 'all'
           ? true
@@ -36,17 +35,22 @@ export default function ScholarshipsPage() {
           ? item.isNationwide
           : item.stateOrigin === selectedState;
 
-      // Type match
       const matchesType = selectedType === 'all' ? true : item.type === selectedType;
 
-      return matchesSearch && matchesState && matchesType;
+      const matchesCategory = selectedCategory === 'all'  ? true
+       : item.eligibility.eligibleCategories.some(
+        (cat) => cat.toLowerCase() === selectedCategory.toLowerCase()
+      );
+
+      return matchesSearch && matchesState && matchesType && matchesCategory;
     });
-  }, [searchQuery, selectedState, selectedType]);
+  }, [searchQuery, selectedState, selectedType, selectedCategory]);
 
   const clearFilters = () => {
     setSearchQuery('');
     setSelectedState('all');
     setSelectedType('all');
+    setSelectedCategory('all');
   };
 
   return (
@@ -89,7 +93,7 @@ export default function ScholarshipsPage() {
             }`}
           >
             {/* Search Input Bar */}
-            <div className="relative md:col-span-5">
+            <div className="relative md:col-span-4">
               <Search
                 className={`w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 ${
                   isDark ? 'text-slate-400' : 'text-slate-500'
@@ -119,7 +123,7 @@ export default function ScholarshipsPage() {
             </div>
 
             {/* State Selection Dropdown */}
-            <div className="md:col-span-4">
+            <div className="md:col-span-3">
               <select
                 value={selectedState}
                 onChange={(e) => setSelectedState(e.target.value)}
@@ -144,7 +148,8 @@ export default function ScholarshipsPage() {
               <select
                 value={selectedType}
                 onChange={(e) => setSelectedType(e.target.value as any)}
-                className={`w-full border px-3 py-2.5 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all ${
+                className={`w-full border
+                   px-3 py-2.5 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all ${
                   isDark
                     ? 'bg-slate-950 border-slate-700 text-white'
                     : 'bg-slate-50 border-slate-300 text-slate-900'
@@ -158,6 +163,29 @@ export default function ScholarshipsPage() {
                 <option value="Private">Private</option>
               </select>
             </div>
+
+              <div className="md:col-span-2">
+              <select
+                value={selectedCategory}
+                onChange={(e) => setSelectedCategory(e.target.value as any)}
+                className={`w-full border px-3 py-2.5 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all ${
+                isDark  ? 'bg-slate-950 border-slate-700 text-white' : 'bg-slate-50 border-slate-300 text-slate-900'}`} >
+
+                <option value="all">All Category</option>
+                <option value="SC">SC</option>
+                <option value="ST">ST</option>
+                <option value="BC">BC</option>
+                <option value="Kapu">Kapu</option>
+                <option value="EBC">EBC</option>
+                <option value="OBC">OBC</option>
+                <option value="SBC">SBC</option>
+                <option value="VJNT">VJNT</option>
+                <option value="Minority">Minority</option>
+
+              </select>
+            </div>
+
+
           </div>
 
           {/* Active Filter Indicators */}

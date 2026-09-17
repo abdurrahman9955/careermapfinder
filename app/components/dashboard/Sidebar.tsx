@@ -50,12 +50,12 @@ const NAV_ITEMS: NavItem[] = [
     icon: Bookmark,
   },
   {
-    title: 'Stream & Career Tests',
+    title: 'Board & Career Exams',
     href: '/dashboard?test',
     icon: GraduationCap,
     children: [
-      { title: 'Skills Assessments', href: '/dashboard?test-skills' },
-      { title: 'Career Assessments', href: '/dashboard?test-career' },
+      { title: 'Board Exams', href: '/dashboard?test-skills' },
+      { title: 'Career Exams', href: '/dashboard?test-career' },
     ],
   },
   {
@@ -69,11 +69,11 @@ const NAV_ITEMS: NavItem[] = [
     href: '/dashboard/universities',
     icon: GitCompare,
   },
-  {
-    title: 'Scholarship Explorer',
-    href: '/dashboard/scholarships',
-    icon: Calculator,
-  },
+  // {
+  //   title: 'Scholarship Explorer',
+  //   href: '/dashboard/scholarships',
+  //   icon: Calculator,
+  // },
   {
     title: 'State Discovery',
     href: '/dashboard/state-discovery',

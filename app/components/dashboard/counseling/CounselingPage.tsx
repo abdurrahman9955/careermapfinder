@@ -188,7 +188,7 @@ export default function CounselingBookingPage() {
               <p className={`text-xs sm:text-sm max-w-lg mx-auto mb-6 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
                 Our academic lead will review your background and send a confirmation email with your session calendar link within 24 hours.
               </p>
-              <button
+              {/* <button
                 onClick={() => {
                   setIsSubmitted(false);
                   setCurrentStep(1);
@@ -196,7 +196,7 @@ export default function CounselingBookingPage() {
                 className="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white text-xs sm:text-sm font-semibold rounded-xl shadow-md transition-all"
               >
                 Submit Another Request
-              </button>
+              </button> */}
             </motion.div>
           )}
 
