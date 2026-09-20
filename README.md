@@ -153,50 +153,6 @@ Impact of Automation
 New Opportunities
 Emerging Specializations
 
-
-‎1. Complete career database — thousands of career pages.
-‎2. Career search and filtering.
-‎3. Career pathways/roadmaps showing the steps from school → education → exams → career.
-‎4. Eligibility, age limits, exams, fees, salary, skills and other career information.
-‎5. Science, Commerce, Arts and other streams.
-‎6. Personalized career recommendations using questionnaires.
-‎7. AI-based career guidance/chatbot.
-‎8. Career comparison — compare 2–5 careers side by side.
-‎9. College/course information.
-‎10. Entrance-exam information.
-‎11. Government/private career information.
-‎12. User accounts and profiles.
-‎13. Save/bookmark careers.
-‎14. Recently viewed careers.
-‎15. Personalized dashboard.
-‎16. Search history.
-‎17. Comments and feedback.
-‎18. Community/discussion sections.
-‎19. Videos embedded into career/course pages.
-‎20. Quizzes and career tests.
-‎21. Mock tests and practice questions.
-‎22. User progress tracking.
-‎23. Notifications through browser/email.
-‎24. Payments and subscriptions.
-‎25. Advertisements.
-‎26. Analytics — track what users search for and which careers they view.
-‎27. SEO — individual career pages can appear on Google.
-‎28. Social sharing — users can share career pages.
-‎29. Multilingual content.
-‎30. Responsive design that works on phones, tablets and computers.
-‎31. Login using Google/email/phone.
-‎32. AI-generated personalized career roadmaps.
-‎33. Recommendation engine based on interests, marks, subjects and goals.
-‎34. Parent/student accounts and potentially separate dashboards.
-‎35. Online counselling/mentor booking.
-‎36. Career-related calculators — salary, eligibility, age, exam attempts, etc.
-‎37. Admin panel for your team to add/update careers.
-‎38. Database that can continuously expand.
-‎39. Referral systems.
-‎40. Leaderboards, badges and gamification.
-
-
-
 Hindi: 43.63% (~528 million speakers), mainly spoken in northern and central regions.
 Bengali: 8.30% (~97.2 million speakers), prominent in eastern states like West Bengal.
 Marathi: 6.86% (~83 million speakers), primarily spoken in Maharashtra.

@@ -3,8 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Compass, Menu, X, MapPin, ChevronDown, User, Sparkles } from 'lucide-react';
-import { NAV_ITEMS, STATE_DISCOVERY_DATA } from '@/app/utils/landing-data';
+import { Compass, Menu, X, User, Sparkles } from 'lucide-react';
+import { NAV_ITEMS } from '@/app/utils/landing-data';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
