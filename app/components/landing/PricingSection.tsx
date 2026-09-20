@@ -20,13 +20,13 @@ export const PricingSection: React.FC = () => {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto">
           <span className="text-xs font-semibold uppercase tracking-wider text-indigo-400 bg-indigo-950/80 px-3 py-1 rounded-full border border-indigo-800/60">
-            Transparent Pricing in INR (₹)
+           Simple And Transparent Pricing
           </span>
           <h2 className="text-xl sm:text-3xl font-extrabold text-white tracking-tight mt-3">
             Invest in Your Future with Full Clarity
           </h2>
           <p className="text-slate-400 text-sm sm:text-base mt-3">
-            Start completely free or unlock advanced AI roadmaps and parent financial planning tools.
+            Start completely free or unlock advanced AI career roadmaps and financial planning tools.
           </p>
 
           {/* Billing Cycle Toggle */}
@@ -37,7 +37,7 @@ export const PricingSection: React.FC = () => {
                 billingCycle === 'monthly' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'
               }`}
             >
-              Monthly Billing
+              Monthly
             </button>
             <button
               onClick={() => setBillingCycle('annual')}
@@ -45,16 +45,16 @@ export const PricingSection: React.FC = () => {
                 billingCycle === 'annual' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white'
               }`}
             >
-              <span>Annual Billing</span>
+              <span>Annual</span>
               <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800">
-                Save 25%
+                Save 50%
               </span>
             </button>
           </div>
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
           {PRICING_TIERS.map((tier) => {
             const displayPrice = billingCycle === 'annual' ? tier.priceAnnual : tier.priceMonthly;
 

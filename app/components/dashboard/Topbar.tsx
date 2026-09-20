@@ -38,7 +38,7 @@ export const Topbar: React.FC<TopbarProps> = ({ onOpenMobileSidebar }) => {
         </button>
 
         
-       <div className="max-md:hidden md:flex items-center flex-grow   max-w-full mr-5">
+       <div className="max-lg:hidden lg:flex items-center flex-grow   max-w-full mr-5">
 
                 <div className="relative w-full">
                 <Link href={{pathname:'/dashboard/settings'}}>
@@ -64,7 +64,7 @@ export const Topbar: React.FC<TopbarProps> = ({ onOpenMobileSidebar }) => {
         from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white text-xs 
         font-semibold shadow-md shadow-indigo-500/10 transition-all">
           <Sparkles className="w-3.5 h-3.5" />
-          <span>Ask AI Advisor</span>
+          <span>Ask Career Map  AI</span>
         </button>
 
         {/* Theme Toggle Button */}
@@ -112,7 +112,7 @@ export const Topbar: React.FC<TopbarProps> = ({ onOpenMobileSidebar }) => {
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 8 }}
-                className={`absolute right-0 mt-2 w-80 border rounded-2xl shadow-2xl p-4 z-50 ${
+                className={`absolute -right-10 sm:right-0 mt-2 w-80 border rounded-2xl shadow-2xl p-4 z-50 ${
                   theme === 'dark'
                     ? 'bg-slate-900 border-slate-700'
                     : 'bg-white border-slate-300'
@@ -222,14 +222,14 @@ export const Topbar: React.FC<TopbarProps> = ({ onOpenMobileSidebar }) => {
                       theme === 'dark' ? 'text-white' : 'text-slate-900'
                     }`}
                   >
-                    Rahul Sharma
+                    Your Full Name
                   </p>
                   <p
                     className={`text-[11px] truncate ${
                       theme === 'dark' ? 'text-slate-400' : 'text-slate-500'
                     }`}
                   >
-                    rahul@example.com
+                    name@example.com
                   </p>
                 </div>
 

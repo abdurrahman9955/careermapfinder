@@ -42,7 +42,7 @@ export const Navbar: React.FC = () => {
                 Career<span className="text-indigo-400">Map</span>Finder
               </span>
               <span className="text-[10px] tracking-wider text-slate-400 uppercase font-medium">
-                India&apos;s Career Discovery
+                Student&apos;s Career Discovery
               </span>
             </div>
           </Link>

@@ -61,13 +61,17 @@ export const HowItWorks: React.FC = () => {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-violet-400 bg-violet-950/80 px-3.5 py-1.5 rounded-full border border-violet-800/60 shadow-inner">
+          <div className="inline-flex items-center gap-2 text-xs font-semibold 
+            uppercase tracking-wider text-violet-400 bg-violet-950/80 px-3.5 
+            py-1.5 rounded-full border border-violet-800/60 shadow-inner">
             <Sparkles className="w-3.5 h-3.5 text-violet-400" />
-            <span>Simple 4-Step Process</span>
+            <span>Simple 3-Step Process</span>
           </div>
 
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight mt-4 leading-tight sm:leading-none">
-            How <span className="bg-gradient-to-r from-violet-400 via-indigo-400 to-emerald-400 bg-clip-text text-transparent">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white 
+          tracking-tight mt-4 leading-tight sm:leading-none">
+            How <span className="bg-gradient-to-r from-violet-400 
+            via-indigo-400 to-emerald-400 bg-clip-text text-transparent">
             CareerMapFinder</span> Guides You
           </h2>
 
@@ -83,7 +87,7 @@ export const HowItWorks: React.FC = () => {
           {/* Desktop Connecting Line */}
           <div className="hidden lg:block absolute top-1/2 left-8 right-8 h-0.5 bg-gradient-to-r from-violet-500/20 via-indigo-500/20 to-emerald-500/20 -translate-y-6 z-0" />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 relative z-10">
             {HOW_IT_WORKS_STEPS.map((step, idx) => {
               const accent = stepAccents[idx % stepAccents.length];
 

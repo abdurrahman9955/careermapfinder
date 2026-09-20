@@ -59,7 +59,7 @@ const defaultIcon = {
 
 export const KeyServices: React.FC = () => {
   return (
-    <section id="services" className="py-6 bg-slate-950 relative overflow-hidden">
+    <section id="services" className="py-6 border-t border-slate-700 bg-slate-950 relative overflow-hidden">
       {/* Background Lighting Glows */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-indigo-600/10 blur-[130px] rounded-full pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-72 h-72 bg-violet-600/10 blur-[100px] rounded-full pointer-events-none" />
@@ -77,12 +77,12 @@ export const KeyServices: React.FC = () => {
           mt-4 leading-snug sm:leading-tight">
             Everything You Need to Navigate <br className="hidden sm:inline" />
             <span className="bg-gradient-to-r from-indigo-400 via-violet-300 to-emerald-400 bg-clip-text text-transparent">
-              Indian Higher Education
+              Career & Higher Education
             </span>
           </h2>
           
           <p className="text-slate-400 text-xs sm:text-base mt-3 sm:mt-4 leading-relaxed max-w-2xl mx-auto">
-            Built specifically to eliminate uncertainty for Indian students choosing streams, entrance exams, cutoff analytics, and long-term career roadmaps.
+            Built specifically to eliminate uncertainty for students choosing streams, entrance exams, cutoff analytics, and long-term career roadmaps.
           </p>
         </div>
 
@@ -135,10 +135,6 @@ export const KeyServices: React.FC = () => {
                     </div>
                   ))}
 
-                  <div className="pt-2 flex items-center justify-between text-[11px] font-semibold text-indigo-400 group-hover:text-indigo-300 transition-colors">
-                     <a href="#state-discovery"> <span>Explore State Discovery</span>  </a>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                  </div>
                 </div>
               </motion.div>
             );
@@ -153,14 +149,16 @@ export const KeyServices: React.FC = () => {
             </div>
             <div>
               <h4 className="text-sm sm:text-base font-bold text-white">Need a customized admission strategy?</h4>
-              <p className="text-xs text-slate-400 mt-0.5">Combine cutoffs, state quotas, and fee structure metrics in one view.</p>
+              <p className="text-xs text-slate-400 mt-0.5">Combine cutoffs, quotas, and fee structure metrics in one view.</p>
             </div>
           </div>
           <a
-            href="#state-discovery"
+            href="/dashboard"
+            target="_blank"
+            rel="noreferrer"
             className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold transition-all shadow-lg shadow-indigo-600/30 shrink-0"
           >
-            Check State Cutoffs
+            Explore Career Maps
           </a>
         </div>
 

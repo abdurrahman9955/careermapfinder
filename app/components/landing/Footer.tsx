@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
               <span>Get Exam & Cutoff Alerts</span>
             </h3>
             <p className="text-slate-400 text-xs mt-1">
-              Never miss registration deadlines for JEE, NEET, CUET, MHT-CET, KCET, or State Board results.
+              Never miss registration deadlines for your exam and results.
             </p>
           </div>
           <div className="lg:col-span-6 flex items-center gap-2">
@@ -34,7 +34,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Links Navigation Grid */}
-        <div className="py-12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+        <div className="py-12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8">
           
           <div className="col-span-2 lg:col-span-1 space-y-3">
             <Link href="/" className="flex items-center gap-2">
@@ -43,12 +43,12 @@ export const Footer: React.FC = () => {
               </div>
               <span className="text-base font-bold text-white tracking-tight">CareerMapFinder</span>
             </Link>
-            <p className="text-[11px] text-slate-400 leading-relaxed">
-              Empowering Indian students and parents with AI-driven regional career roadmaps, exam cutoffs, and living cost insights.
+            <p className="text-[12px] text-slate-400 leading-relaxed">
+              Empowering academic students and parents with AI-driven regional career roadmaps, exam cutoffs, and living cost insights.
             </p>
           </div>
 
-          <div>
+          {/* <div>
             <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-3">Popular Streams</h4>
             <ul className="space-y-2">
               {FOOTER_LINKS.popularStreams.map((link) => (
@@ -57,21 +57,21 @@ export const Footer: React.FC = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           <div>
             <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-3">Visit Quick Links</h4>
             <ul className="space-y-2">
               {FOOTER_LINKS.statesCovered.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="hover:text-white transition-colors">{link.name}</Link>
+                  <Link href={link.href} className="hover:text-white transition-colors">Visit {link.name}</Link>
                 </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-3">Explore Platform Tools</h4>
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-3">Explore Platform</h4>
             <ul className="space-y-2">
               {FOOTER_LINKS.tools.map((link) => (
                 <li key={link.name}>
@@ -98,7 +98,7 @@ export const Footer: React.FC = () => {
         <div className="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px]">
           <p>© {new Date().getFullYear()} CareerMapFinder Platform Ltd. All rights reserved.</p>
           <div className="flex gap-4">
-            <span>Designed for Indian Students & Parents</span>
+            <span>Designed for Academic Students & Parents</span>
           </div>
         </div>
 

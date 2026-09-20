@@ -3,7 +3,7 @@ export interface CounselingFormData {
   fullName: string;
   email: string;
   phone: string;
-  state: string;
+  country: string;
   city: string;
 
   academicStatus: 'school_student' | 'college_student' | 'graduated' | 'working_professional';
@@ -34,7 +34,7 @@ export const INITIAL_FORM_DATA: CounselingFormData = {
   fullName: '',
   email: '',
   phone: '',
-  state: '',
+  country: '',
   city: '',
   academicStatus: 'school_student',
   targetUniversity: '',

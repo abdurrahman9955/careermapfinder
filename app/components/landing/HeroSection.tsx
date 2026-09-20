@@ -30,7 +30,8 @@ export const HeroSection: React.FC = () => {
               className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-950/80 border border-indigo-800/60 text-indigo-300 text-xs font-semibold mb-6 shadow-sm"
             >
               <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
-              <span>Tailored for 28 States & UTs across India</span>
+              {/* <span>Tailored for 28 States & UTs across India</span> */}
+                  <span>Tailored for Students Across All Industries</span>
             </motion.div>
 
             {/* Main Headline */}
@@ -40,11 +41,11 @@ export const HeroSection: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15] text-left"
             >
-              Discover Your Better Study Path &{' '}
+              Discover Your Ideal Academic Path &{' '}
               <span className="bg-gradient-to-r from-indigo-400 via-violet-400 to-emerald-400 bg-clip-text text-transparent">
-                Lifestyle Expectation
+                Future Lifestyle 
               </span>{' '}
-              in India.
+              Expectations.
             </motion.h1>
 
             {/* Body Description */}
@@ -54,7 +55,9 @@ export const HeroSection: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mt-6 text-base sm:text-md text-slate-300 leading-relaxed max-w-2xl text-left"
             >
-              From Class 9th streams and state entrance CETs (JEE, NEET, MHT-CET, KCET) to real entry salaries and Tier-1/2 city living costs. Map your exact journey step-by-step.
+              From secondary school electives and degree specializations to real starting salaries and metropolitan 
+              cost-of-living breakdowns. Map your exact journey step-by-step.
+            
             </motion.p>
 
             {/* Call to Action Buttons */}
@@ -80,7 +83,7 @@ export const HeroSection: React.FC = () => {
                 href="#comparison-preview"
                 className="px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 font-semibold text-sm transition-colors flex items-center justify-center gap-2"
               >
-                <span>Take AI Career Test</span>
+                <span>Take AI Career Exams</span>
               </a>
             </motion.div>
 
@@ -91,7 +94,7 @@ export const HeroSection: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 border-t border-slate-800/80 w-full"
             >
-              {['State Domicile Quotas', 'Realistic Tier 1/2 Pay', 'PCM / PCB / Commerce / Arts'].map((item) => (
+              {['Advanced Career Exploration', 'Exams & Tests Assessments', 'Job Preparation Guide'].map((item) => (
                 <div key={item} className="flex items-center gap-2 max-sm:text-[16px] text-xs text-slate-300">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                   <span>{item}</span>
@@ -166,10 +169,12 @@ export const HeroSection: React.FC = () => {
                 <div className="p-3 rounded-xl bg-indigo-950/40 border border-indigo-900/40 grid grid-cols-2 gap-3 text-left">
                   <div>
                     <div className="flex items-center gap-1 text-[11px] text-slate-400">
-                      <IndianRupee className="w-3 h-3 text-emerald-400" />
-                      <span>Avg. Entry Salary</span>
+                      {/* <IndianRupee className="w-3 h-3 text-emerald-400" /> */}
+                      <span>High Growth Demand</span>
                     </div>
-                    <p className="text-sm font-bold text-emerald-400 mt-0.5">{currentPath.averageStartingSalary}</p>
+                    <p className="text-sm font-bold text-emerald-400 mt-0.5">
+                      {/* {currentPath.averageStartingSalary} */} For Global Professionals
+                    </p>
                   </div>
                   <div>
                     <div className="flex items-center gap-1 text-[11px] text-slate-400">

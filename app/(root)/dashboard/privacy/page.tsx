@@ -1,11 +1,11 @@
-import ContactUsPage from "@/app/components/dashboard/contact/ContactPage";
 import { DashboardLayoutWrapper } from "@/app/components/dashboard/DashboardLayoutWrapper";
+import PrivacyPolicyPage from "@/app/components/dashboard/privacy/PrivacyPage";
 
 const page = () => {
   return (
     <div>
     <DashboardLayoutWrapper>
-      <ContactUsPage />
+      <PrivacyPolicyPage />
     </DashboardLayoutWrapper>
     </div>
   )

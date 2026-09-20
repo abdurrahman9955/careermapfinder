@@ -29,7 +29,7 @@ export const StepBasicInfo: React.FC<StepProps> = ({ isDark, register, errors })
         <div className="relative">
           <input
             {...register('fullName', { required: 'Full name is required' })}
-            placeholder="e.g. Rahul Sharma"
+            placeholder="write your full name"
             className={inputStyle}
           />
         </div>
@@ -45,7 +45,7 @@ export const StepBasicInfo: React.FC<StepProps> = ({ isDark, register, errors })
               required: 'Email is required',
               pattern: { value: /^\S+@\S+$/i, message: 'Invalid email address' } 
             })}
-            placeholder="rahul@example.com"
+            placeholder="write your email"
             className={inputStyle}
           />
           {errors.email && <p className="text-red-500 text-[11px] mt-1">{errors.email.message}</p>}
@@ -56,7 +56,7 @@ export const StepBasicInfo: React.FC<StepProps> = ({ isDark, register, errors })
           <input
             type="tel"
             {...register('phone', { required: 'Phone number is required' })}
-            placeholder="+91 98765 43210"
+            placeholder="write phone number"
             className={inputStyle}
           />
           {errors.phone && <p className="text-red-500 text-[11px] mt-1">{errors.phone.message}</p>}
@@ -65,21 +65,19 @@ export const StepBasicInfo: React.FC<StepProps> = ({ isDark, register, errors })
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className={labelStyle}>State *</label>
-          <select {...register('state', { required: 'State selection is required' })} className={inputStyle}>
-            <option value="">Select State</option>
-            {INDIAN_STATES.map((st) => (
-              <option key={st} value={st}>{st}</option>
-            ))}
-          </select>
-          {errors.state && <p className="text-red-500 text-[11px] mt-1">{errors.state.message}</p>}
+          <label className={labelStyle}>Country *</label>
+           <input
+            {...register('country', { required: 'Country is required' })}
+            placeholder="write your country"
+            className={inputStyle}/>
+            {errors.country && <p className="text-red-500 text-[11px] mt-1">{errors.country.message}</p>}
         </div>
 
         <div>
-          <label className={labelStyle}>City *</label>
+          <label className={labelStyle}>City & State *</label>
           <input
             {...register('city', { required: 'City is required' })}
-            placeholder="e.g. Pune, Bangalore"
+            placeholder="write city and state"
             className={inputStyle}
           />
           {errors.city && <p className="text-red-500 text-[11px] mt-1">{errors.city.message}</p>}
@@ -124,7 +122,7 @@ export const StepAcademicStatus: React.FC<StepProps> = ({ isDark, register, watc
             <label className={labelStyle}>Target University / College (If any)</label>
             <input
               {...register('targetUniversity')}
-              placeholder="e.g. IIT Bombay, Delhi University, BITS Pilani"
+              placeholder="write target university"
               className={inputStyle}
             />
           </div>
@@ -132,7 +130,7 @@ export const StepAcademicStatus: React.FC<StepProps> = ({ isDark, register, watc
             <label className={labelStyle}>Preferred Course / Field of Study</label>
             <input
               {...register('targetFieldOfStudy')}
-              placeholder="e.g. Computer Science Engineering, Data Science, Law"
+              placeholder="write field of study"
               className={inputStyle}
             />
           </div>
@@ -150,7 +148,7 @@ export const StepAcademicStatus: React.FC<StepProps> = ({ isDark, register, watc
               <label className={labelStyle}>Current/Past Institution Name</label>
               <input
                 {...register('currentCollegeName')}
-                placeholder="e.g. Mumbai University"
+                placeholder="write institution name"
                 className={inputStyle}
               />
             </div>
@@ -158,7 +156,7 @@ export const StepAcademicStatus: React.FC<StepProps> = ({ isDark, register, watc
               <label className={labelStyle}>Degree & Major</label>
               <input
                 {...register('currentDegree')}
-                placeholder="e.g. B.Tech CS, B.Com, B.Sc"
+                placeholder="field of study"
                 className={inputStyle}
               />
             </div>
@@ -167,7 +165,7 @@ export const StepAcademicStatus: React.FC<StepProps> = ({ isDark, register, watc
             <label className={labelStyle}>Graduation Year</label>
             <input
               {...register('graduationYear')}
-              placeholder="e.g. 2024"
+              placeholder="write graduation year"
               className={inputStyle}
             />
           </div>
@@ -204,7 +202,7 @@ export const StepGoalsAndChallenges: React.FC<StepProps> = ({ isDark, register, 
         <textarea
           {...register('biggestChallenge', { required: 'Please describe your primary concern' })}
           rows={3}
-          placeholder="e.g. Confused between two degree choices; unsure about eligibility for state domicile quotas..."
+          placeholder="e.g. Confused between two degree choices; unsure about eligibility e.t.c..."
           className={inputStyle}
         />
         {errors.biggestChallenge && <p className="text-red-500 text-[11px] mt-1">{errors.biggestChallenge.message}</p>}
@@ -232,9 +230,9 @@ export const StepGoalsAndChallenges: React.FC<StepProps> = ({ isDark, register, 
         <div>
           <label className={labelStyle}>Preferred Time Window</label>
           <select {...register('preferredTimeSlot')} className={inputStyle}>
-            <option value="morning">Morning (10:00 AM - 1:00 PM)</option>
-            <option value="afternoon">Afternoon (2:00 PM - 5:00 PM)</option>
-            <option value="evening">Evening (6:00 PM - 9:00 PM)</option>
+            <option value="morning">Morning (10:00 AM - 1:00 PM) UTC</option>
+            <option value="afternoon">Afternoon (2:00 PM - 5:00 PM) UTC</option>
+            <option value="evening">Evening (6:00 PM - 9:00 PM) UTC</option>
           </select>
         </div>
       </div>

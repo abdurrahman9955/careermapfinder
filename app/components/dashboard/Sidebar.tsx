@@ -21,7 +21,9 @@ import {
   MessageCircle,
   HelpCircle,
   Globe2,
-  HomeIcon
+  HomeIcon,
+  BracesIcon,
+  BriefcaseBusiness
 } from 'lucide-react';
 
 interface NavItem {
@@ -36,7 +38,7 @@ interface NavItem {
 
 const NAV_ITEMS: NavItem[] = [
   {
-    title: 'Career Explorer',
+    title: 'Main Dashboard',
     href: '/dashboard?career-explorer',
     icon: LayoutDashboard,
     badge: '',
@@ -44,7 +46,15 @@ const NAV_ITEMS: NavItem[] = [
     rel:"",
   },
   {
-    title: 'Board Exams',
+    title: 'Career Explorer',
+    href: '/dashboard?career-explorer',
+    icon: GitCompare,
+    badge: '',
+    target:"", 
+    rel:"",
+  },
+  {
+    title: 'Exams & Tests',
     href: '/dashboard?board-exams',
     icon: GraduationCap,
     badge: '',
@@ -52,35 +62,21 @@ const NAV_ITEMS: NavItem[] = [
     rel:"",
   },
   {
-    title: 'Career Exams',
+    title: 'Job Preparation',
     href: '/dashboard?career-exams',
-    icon: GraduationCap,
+    icon: BriefcaseBusiness,
     badge: '',
-    target:"", 
-    rel:"",
-  },
-  {
-    title: 'Universities',
-    href: '/dashboard/universities',
-    icon: GitCompare,
     target:"", 
     rel:"",
   },
   {
     title: 'Counseling (Pro)',
-    href: '/dashboard/counselling-session',
+    href: '/dashboard/counselling',
     icon: Calendar,
     badge: '',
     target:"", 
     rel:"",
   },
-  {
-    title: 'State Discovery',
-    href: '/dashboard/state-discovery',
-    icon: Globe2,
-    target:"", 
-    rel:"",
-  }, 
   {
     title: 'Account Settings',
     href: '/dashboard/settings',
@@ -99,6 +95,27 @@ const NAV_ITEMS: NavItem[] = [
     title: 'Contact Support',
     href: '/dashboard/contact',
     icon: HelpCircle,
+    target:"", 
+    rel:"",
+  },
+  {
+    title: 'Send Feedback',
+    href: '/dashboard/feedback',
+    icon: MessageCircle,
+    target:"", 
+    rel:"",
+  },
+  {
+    title: 'Privacy Policy',
+    href: '/dashboard/privacy',
+    icon: HomeIcon,
+    target:"", 
+    rel:"",
+  },
+    {
+    title: 'Terms Of Service',
+    href: '/dashboard/terms',
+    icon: HomeIcon,
     target:"", 
     rel:"",
   },

@@ -1,4 +1,5 @@
-export type StreamType = 'Science (PCM)' | 'Science (PCB)' | 'Commerce' | 'Arts & Humanities' | 'Vocational';
+export type StreamType = 'Science (PCM)' | 'Science (PCB)' | 'Commerce' | 'Arts & Humanities' 
+| 'Vocational' | 'STEM & Computer Science' | 'Business & Financial Sciences' | 'Pre-Med & Biological Sciences';
 
 export interface NavItem {
   label: string;
@@ -30,19 +31,6 @@ export interface InteractiveCareerPath {
   steps: CareerPathStep[];
 }
 
-export interface StateDiscoveryItem {
-  id: string;
-  stateName: string;
-  code: string;
-  isUnionTerritory: boolean;
-  topEntranceExams: string[];
-  keyColleges: string[];
-  emergingHubs: string[];
-  stateQuotaInsight: string;
-  avgTuitionFeeRange: string;
-}
-
-
 export interface FeatureCard {
   id: string;
   iconName: string;
@@ -57,29 +45,6 @@ export interface HowItWorksStep {
   title: string;
   description: string;
   details: string[];
-}
-
-export interface AudiencePersona {
-  id: 'students-school' | 'students-ug' | 'parents' | 'counsellors';
-  roleTitle: string;
-  tagline: string;
-  painPoints: string[];
-  keySolutions: string[];
-  ctaText: string;
-}
-
-export interface CareerComparisonData {
-  id: string;
-  careerName: string;
-  stream: StreamType;
-  avgPreparationTime: string;
-  topExams: string[];
-  avgTuitionCost: string;
-  startingSalaryTier1: string;
-  startingSalaryTier2: string;
-  workLifeBalanceScore: number; // 1 to 10
-  growthRate: string;
-  lifestyleTier1: string;
 }
 
 export interface PricingTier {

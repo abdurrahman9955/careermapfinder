@@ -1,11 +1,11 @@
-import ContactUsPage from "@/app/components/dashboard/contact/ContactPage";
 import { DashboardLayoutWrapper } from "@/app/components/dashboard/DashboardLayoutWrapper";
+import FeedbackPage from "@/app/components/dashboard/feedback/FeedbackPage";
 
 const page = () => {
   return (
     <div>
     <DashboardLayoutWrapper>
-      <ContactUsPage />
+      <FeedbackPage />
     </DashboardLayoutWrapper>
     </div>
   )

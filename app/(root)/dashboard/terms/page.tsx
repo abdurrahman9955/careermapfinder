@@ -1,11 +1,13 @@
 import { DashboardLayoutWrapper } from "@/app/components/dashboard/DashboardLayoutWrapper";
-import { RegionalStateSelector } from "@/app/components/landing/StateDiscovery";
+import TermsOfServicePage from "@/app/components/dashboard/terms/TermsPage";
 
 const page = () => {
   return (
+    <div>
     <DashboardLayoutWrapper>
-       <RegionalStateSelector />
+      <TermsOfServicePage />
     </DashboardLayoutWrapper>
+    </div>
   )
 }
 

@@ -30,7 +30,7 @@ export const PricingSection: React.FC = () => {
                 : 'text-indigo-700 bg-indigo-100 border-indigo-300'
             }`}
           >
-            Transparent Pricing in INR (₹)
+           Simple And Transparent Pricing
           </span>
           <h2
             className={`text-xl sm:text-3xl font-extrabold tracking-tight mt-3 ${
@@ -44,7 +44,7 @@ export const PricingSection: React.FC = () => {
               isDark ? 'text-slate-400' : 'text-slate-600'
             }`}
           >
-            Start completely free or unlock advanced AI roadmaps and parent financial planning tools.
+            Start completely free or unlock advanced AI career roadmaps and financial planning tools.
           </p>
 
           {/* Billing Cycle Toggle */}
@@ -85,7 +85,7 @@ export const PricingSection: React.FC = () => {
                     : 'bg-emerald-100 text-emerald-800 border-emerald-300'
                 }`}
               >
-                Save 25%
+                Save 50%
               </span>
             </button>
           </div>
