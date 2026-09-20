@@ -248,11 +248,6 @@ export const PRICING_TIERS: PricingTier[] = [
 ];
 
 export const FOOTER_LINKS = {
-  popularStreams: [
-    { name: 'Computer Science & IT', href: '#' },
-    { name: 'MBBS & Allied Health', href: '#' },
-    { name: 'Law & Judiciary (CLAT)', href: '#' },
-  ],
   statesCovered: [
     { name: 'Home Page', href: '#' },
     { name: 'Pricing Page', href: '#pricing' },

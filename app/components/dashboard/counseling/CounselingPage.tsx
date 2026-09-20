@@ -29,7 +29,7 @@ export default function CounselingBookingPage() {
 
   const nextStep = async () => {
     let isValid = false;
-    if (currentStep === 1) isValid = await trigger(['fullName', 'email', 'phone', 'state', 'city']);
+    if (currentStep === 1) isValid = await trigger(['fullName', 'email', 'phone', 'country', 'city']);
     if (currentStep === 2) isValid = await trigger(['academicStatus']);
 
     if (isValid) setCurrentStep((prev) => Math.min(prev + 1, 3));

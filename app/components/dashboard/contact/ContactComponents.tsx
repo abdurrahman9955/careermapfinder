@@ -233,37 +233,7 @@ export const ContactInfoAndMapSection: React.FC<ComponentProps> = ({ isDark }) =
         </div>
 
         <div className="space-y-4 text-xs sm:text-sm">
-          {/* Office Address */}
-          {/* <div className="flex items-start gap-3.5">
-            <div className={`p-2.5 rounded-xl border shrink-0 
-                ${isDark ? 'bg-slate-950 border-slate-700 text-indigo-400' : 'bg-indigo-50 border-indigo-300 text-indigo-600'}`}>
-              <MapPin className="w-4 h-4" />
-            </div>
-            <div>
-              <span className={`block text-[10px] font-bold uppercase tracking-wider ${isDark ? 'text-slate-400' 
-                : 'text-slate-500'}`}>
-                Head Office Address
-              </span>
-              <p className="font-semibold leading-relaxed mt-0.5">{contactDetails.address}</p>
-            </div>
-          </div> */}
-
-          {/* Phone Number */}
-          {/* <div className="flex items-start gap-3.5">
-            <div className={`p-2.5 rounded-xl border shrink-0 
-                ${isDark ? 'bg-slate-950 border-slate-700 text-emerald-400' : 'bg-emerald-50 border-emerald-300 text-emerald-600'}`}>
-              <Phone className="w-4 h-4" />
-            </div>
-            <div>
-              <span className={`block text-[10px] font-bold uppercase tracking-wider 
-                ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
-                Helpline / Phone
-              </span>
-              <p className="font-semibold mt-0.5">{contactDetails.phone}</p>
-            </div>
-          </div> */}
-
-          {/* Email Address */}
+         
           <div className="flex items-start gap-3.5">
             <div className={`p-2.5 rounded-xl border shrink-0 
                 ${isDark ? 'bg-slate-950 border-slate-700 text-purple-400' : 'bg-purple-50 border-purple-300 text-purple-600'}`}>

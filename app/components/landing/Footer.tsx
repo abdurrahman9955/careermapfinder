@@ -48,17 +48,6 @@ export const Footer: React.FC = () => {
             </p>
           </div>
 
-          {/* <div>
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-3">Popular Streams</h4>
-            <ul className="space-y-2">
-              {FOOTER_LINKS.popularStreams.map((link) => (
-                <li key={link.name}>
-                  <Link href={link.href} className="hover:text-white transition-colors">{link.name}</Link>
-                </li>
-              ))}
-            </ul>
-          </div> */}
-
           <div>
             <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-3">Visit Quick Links</h4>
             <ul className="space-y-2">

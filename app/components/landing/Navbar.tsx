@@ -63,14 +63,19 @@ export const Navbar: React.FC = () => {
           <div className="hidden md:flex items-center gap-3">
 
             {/* Sign In CTA */}
-            <Link href="/auth/signin"><button className="px-3.5 py-1.5 text-sm font-medium text-slate-200 hover:text-white transition-colors flex items-center gap-1.5">
+            <Link href="/auth/signin" target="_blank"  rel="noreferrer">
+              <button className="px-3.5 py-1.5 text-sm font-medium text-slate-200 
+              hover:text-white transition-colors flex items-center gap-1.5">
               <User className="w-4 h-4 text-slate-400" />
               Sign In </button></Link>
 
             {/* Primary Action Button */}
             <Link
               href="/auth/signup"
-              className="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 rounded-lg shadow-md shadow-indigo-600/25 transition-all flex items-center gap-1.5 group"
+              target="_blank"  rel="noreferrer"
+              className="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-indigo-600 to-violet-600 
+              hover:from-indigo-500 hover:to-violet-500 rounded-lg shadow-md shadow-indigo-600/25 transition-all 
+              flex items-center gap-1.5 group"
             >
               <Sparkles className="w-4 h-4 text-indigo-200 group-hover:rotate-12 transition-transform" />
               <span>Get Started Free</span>

@@ -45,12 +45,12 @@ export default function ContactUsPageHome() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           {/* Left Column: Contact Form (7 cols) */}
           <div className="lg:col-span-7">
-            <ContactFormSection isDark={isDark} />
+            <ContactFormSection isDark={isDark as any} />
           </div>
 
           {/* Right Column: Contact Info & Interactive Map (5 cols) */}
           <div className="lg:col-span-5">
-            <ContactInfoAndMapSection isDark={isDark} />
+            <ContactInfoAndMapSection isDark={isDark as any} />
           </div>
         </div>
 
