@@ -64,7 +64,7 @@ export const Topbar: React.FC<TopbarProps> = ({ onOpenMobileSidebar }) => {
         from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white text-xs 
         font-semibold shadow-md shadow-indigo-500/10 transition-all">
           <Sparkles className="w-3.5 h-3.5" />
-          <span>Ask Career Map  AI</span>
+          <span>Ask AI Advisor</span>
         </button>
 
         {/* Theme Toggle Button */}

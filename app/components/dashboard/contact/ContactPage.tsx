@@ -1,8 +1,5 @@
 'use client';
-
-import React from 'react';
 import { Mail, MessageSquare, ShieldCheck, Sparkles } from 'lucide-react';
-
 import { DashboardLayoutWrapper } from '../DashboardLayoutWrapper';
 import { useTheme } from '../../../context/ThemeContext';
 import { ContactFormSection, ContactInfoAndMapSection } from './ContactComponents';
@@ -12,13 +9,9 @@ export default function ContactUsPage() {
   const isDark = theme === 'dark';
 
   return (
-    // <DashboardLayoutWrapper>
-      <div
-        className={`min-h-screen  transition-colors duration-200 ${
-          isDark ? 'bg-slate-950 text-white' : 'bg-slate-50 text-slate-900'
-        }`}
-      >
-        {/* Page Hero Header */}
+      <div className={`min-h-screen  transition-colors duration-200 ${isDark ? 'bg-slate-950 text-white' 
+      : 'bg-slate-50 text-slate-900' }`} >
+        
         <div className="max-w-7xl mx-auto text-center mb-6">
           <div
             className={`inline-flex items-center gap-2 text-xs font-semibold uppercase 
@@ -45,20 +38,17 @@ export default function ContactUsPage() {
           </p>
         </div>
 
-        {/* Side-by-Side Main Grid Layout */}
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-          {/* Left Column: Contact Form (7 cols) */}
+        
           <div className="lg:col-span-7">
             <ContactFormSection isDark={isDark} />
           </div>
 
-          {/* Right Column: Contact Info & Interactive Map (5 cols) */}
           <div className="lg:col-span-5">
             <ContactInfoAndMapSection isDark={isDark} />
           </div>
         </div>
 
-        {/* Bottom Trust Highlights */}
         <div className="max-w-7xl mx-auto mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div
             className={`p-4 rounded-xl border flex items-center gap-3 ${
@@ -103,6 +93,5 @@ export default function ContactUsPage() {
           </div>
         </div>
       </div>
-    // </DashboardLayoutWrapper>
   );
 }

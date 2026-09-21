@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'CareerMapFinder | Career Ecosystem',
     description: 'Comprehensive career discovery, regional state roadmaps, exam cutoffs, and ROI calculators tailored for students and parents.',
-    url: 'https://wwww.careermapfinder.com',
+    url: 'https://www.careermapfinder.com',
     siteName: 'CareerMapFinder',
     locale: 'en_IN',
     type: 'website',

@@ -55,7 +55,7 @@ const NAV_ITEMS: NavItem[] = [
   },
   {
     title: 'Exams & Tests',
-    href: '/dashboard?board-exams',
+    href: '/dashboard/assessments',
     icon: GraduationCap,
     badge: '',
     target:"", 
