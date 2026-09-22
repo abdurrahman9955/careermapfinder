@@ -17,7 +17,7 @@ import {
 } from 'lucide-react';
 import { useTheme } from '../../../context/ThemeContext';
 import { useCreateExamForm } from './useCreateExamForm';
-import { SubjTagInput } from './SubjTagInput';
+//import { SubjTagInput } from './SubjTagInput';
 import { COUNTRIES, ACADEMIC_EXAMS_BY_COUNTRY, PROFESSIONAL_DOMAINS } from './constants';
 import { DifficultyLevel } from './types';
 
@@ -35,9 +35,7 @@ export default function CreateExamForm() {
   };
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${
-      isDark ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'
-    }`}>
+    <div className={`min-h-screen transition-colors duration-300 ${ isDark ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900' }`}>
       <div className="max-w-7xl mx-auto space-y-6">
         
         {/* Header */}
@@ -242,7 +240,7 @@ export default function CreateExamForm() {
                 </div>
 
                 {/* SubjTagInput Component */}
-                <SubjTagInput
+                {/* <SubjTagInput
                   stream={state.stream}
                   selectedSubjects={state.selectedSubjects}
                   customSubjectInput={state.customSubjectInput}
@@ -250,7 +248,20 @@ export default function CreateExamForm() {
                   onToggleSubject={actions.toggleSubject}
                   onCustomInputChange={actions.setCustomSubjectInput}
                   onAddCustomSubject={actions.handleAddCustomSubject}
-                />
+                /> */}
+
+              <label className="block text-xs font-medium mb-1.5">
+               Target Subject <span className="text-slate-400 font-normal">(Write Only One) *</span>
+              </label>
+ 
+              <input type="text" placeholder="Subject to practice e.g Mathematics" 
+              value={state.subject}
+              onChange={(e) => actions.setSubject(e.target.value)}
+              required
+              className={`w-full px-4 py-2.5 rounded-xl border text-xs outline-none 
+              focus:ring-2 focus:ring-indigo-500 transition ${
+              isDark ? 'bg-slate-950 border-slate-700 text-white placeholder-slate-600' 
+              : 'bg-slate-50 border-slate-300 text-slate-900 placeholder-slate-400'}`} />
                 
                 <div className="grid grid-cols-1 mt-4 sm:grid-cols-2 gap-4">
                   <div>
@@ -376,7 +387,7 @@ export default function CreateExamForm() {
                     <label className="block text-xs font-medium mb-1.5">Dream Career / Job You Want Become*</label>
                     <input
                       type="text"
-                      placeholder="e.g doftware developer"
+                      placeholder="e.g software developer"
                       value={state.career}
                       onChange={(e) => actions.setCareer(e.target.value)}
                       className={`w-full px-4 py-3 rounded-xl border text-sm outline-none focus:ring-2 

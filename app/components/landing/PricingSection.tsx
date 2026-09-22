@@ -69,7 +69,7 @@ export const PricingSection: React.FC = () => {
                 {tier.popular && (
                   <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md flex items-center gap-1">
                     <Sparkles className="w-3 h-3" />
-                    <span>Most Popular Choice</span>
+                    <span>Most Popular</span>
                   </div>
                 )}
 

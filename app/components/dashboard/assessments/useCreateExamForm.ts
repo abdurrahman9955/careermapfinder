@@ -16,6 +16,7 @@ export function useCreateExamForm() {
   const [proDomain, setProDomain] = useState<string>('cloud');
   const [proExamName, setProExamName] = useState<string>('');
   const [certBody, setCertBody] = useState<string>('');
+  const [subject, setSubject] = useState<string>('');
 
   const [course, setCourse] = useState<string>('');
   const [career, setCareer] = useState<string>('');
@@ -78,14 +79,14 @@ export function useCreateExamForm() {
 
   return {
     state: {
-      course,
-      career,
-      background, 
       examCategory,
       selectedCountry,
       stateRegion,
       academicExamName,
       stream,
+      subject,
+      course,
+      career, 
       selectedSubjects,
       customSubjectInput,
       proDomain,
@@ -95,17 +96,18 @@ export function useCreateExamForm() {
       targetScore,
       difficultyLevel,
       additionalNotes,
+      background, 
       isSubmitting,
     },
     actions: {
-      setCourse,
-      setCareer,
-      setBackgrund,
       setExamCategory,
       setSelectedCountry,
       setStateRegion,
       setAcademicExamName,
       setStream,
+      setSubject,
+      setCourse,
+      setCareer,
       setCustomSubjectInput,
       setProDomain,
       setProExamName,
@@ -114,6 +116,7 @@ export function useCreateExamForm() {
       setTargetScore,
       setDifficultyLevel,
       setAdditionalNotes,
+      setBackgrund,
       toggleSubject,
       handleAddCustomSubject,
       handleSubmit,

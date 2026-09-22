@@ -63,7 +63,7 @@ const NAV_ITEMS: NavItem[] = [
   },
   {
     title: 'Job Preparation',
-    href: '/dashboard?career-exams',
+    href: '/dashboard/job-preparation',
     icon: BriefcaseBusiness,
     badge: '',
     target:"", 

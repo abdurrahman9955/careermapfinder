@@ -117,7 +117,7 @@ export const PricingSection: React.FC = () => {
                   to-violet-600 text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full 
                   shadow-md flex items-center gap-1">
                     <Sparkles className="w-3 h-3" />
-                    <span>Most Popular Choice</span>
+                    <span>Most Popular</span>
                   </div>
                 )}
 
