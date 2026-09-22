@@ -61,7 +61,7 @@ export const TargetRoleStep: React.FC<Props> = ({ formData, updateForm, isDark }
 
         <div>
           <label className={`block text-sm font-semibold mb-2 ${isDark ? 'text-slate-200' : 'text-slate-700'}`}>
-            Industry / Domain
+            Industry / Domain <span className="text-red-500">*</span>
           </label>
           <input
             type="text"
@@ -81,7 +81,7 @@ export const TargetRoleStep: React.FC<Props> = ({ formData, updateForm, isDark }
       {/* Experience Level Selector */}
       <div>
         <label className={`block text-sm font-semibold mb-3 ${isDark ? 'text-slate-200' : 'text-slate-700'}`}>
-          Career Stage & Experience Level
+          Career Stage & Experience Level <span className="text-red-500">*</span>
         </label>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {EXPERIENCE_LEVELS.map((lvl) => {
@@ -118,7 +118,7 @@ export const TargetRoleStep: React.FC<Props> = ({ formData, updateForm, isDark }
       {/* Preferred Work Arrangement */}
       <div>
         <label className={`block text-sm font-semibold mb-3 ${isDark ? 'text-slate-200' : 'text-slate-700'}`}>
-          Work Arrangement
+          Work Arrangement <span className="text-red-500">*</span>
         </label>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {WORK_ARRANGEMENTS.map((wa) => {
@@ -148,7 +148,7 @@ export const TargetRoleStep: React.FC<Props> = ({ formData, updateForm, isDark }
       {/* Target Countries Selector */}
       <div>
         <label className={`block text-sm font-semibold mb-2 ${isDark ? 'text-slate-200' : 'text-slate-700'}`}>
-          Target Regions / Countries
+          Target Regions / Countries <span className="text-red-500">*</span>
         </label>
         <div className={`flex flex-wrap gap-2 max-h-36 overflow-y-auto p-2 rounded-xl border 
          ${  isDark ? 'border-slate-700' : ' border-slate-300' }`}>

@@ -45,7 +45,7 @@ export const BackgroundStep: React.FC<Props> = ({ formData, updateForm, isDark }
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label className={`block text-sm font-semibold mb-2 ${isDark ? 'text-slate-200' : 'text-slate-700'}`}>
-            {isStudentOrGrad ? 'Degree / Qualification' : 'Highest Degree Obtained'}
+            {isStudentOrGrad ? 'Degree / Qualification' : 'Highest Degree Obtained'} <span className="text-red-500">*</span>
           </label>
           <div className="relative">
             <GraduationCap className="absolute left-3 top-3.5 w-5 h-5 text-slate-400" />
@@ -66,7 +66,7 @@ export const BackgroundStep: React.FC<Props> = ({ formData, updateForm, isDark }
 
         <div>
           <label className={`block text-sm font-semibold mb-2 ${isDark ? 'text-slate-200' : 'text-slate-700'}`}>
-            {isStudentOrGrad ? 'University / Institution' : 'Most Recent Employer / Company'}
+            {isStudentOrGrad ? 'University / Institution' : 'Most Recent Employer / Company'} <span className="text-red-500">*</span>
           </label>
           <input
             type="text"
@@ -88,7 +88,7 @@ export const BackgroundStep: React.FC<Props> = ({ formData, updateForm, isDark }
           <div>
             <label className={`block text-sm font-semibold mb-2 
               ${isDark ? 'text-slate-200' : 'text-slate-700'}`}>
-              Years of Experience
+              Years of Experience <span className="text-red-500">*</span>
             </label>
             <input
               type="number"
@@ -107,7 +107,7 @@ export const BackgroundStep: React.FC<Props> = ({ formData, updateForm, isDark }
           <div>
             <label className={`block text-sm font-semibold mb-2 
               ${isDark ? 'text-slate-200' : 'text-slate-700'}`}>
-              Current or Previous Job Title
+              Current or Previous Job Title  <span className="text-red-500">*</span>
             </label>
             <input
               type="text"
@@ -129,7 +129,7 @@ export const BackgroundStep: React.FC<Props> = ({ formData, updateForm, isDark }
       <div>
         <label className={`block text-sm font-semibold mb-2 
           ${isDark ? 'text-slate-200' : 'text-slate-700'}`}>
-          Core Skills & Technologies
+          Core Skills & Technologies <span className="text-red-500">*</span>
         </label>
         <div className="flex gap-2 mb-3">
           <input
@@ -201,7 +201,7 @@ export const BackgroundStep: React.FC<Props> = ({ formData, updateForm, isDark }
         <label className={`block text-sm font-semibold mb-2 
           ${isDark ? 'text-slate-200' : 'text-slate-700'}`}>
           {isStudentOrGrad ? 'Key Academic Projects or Achievements' 
-          : 'Summary of Key Projects & Achievements'}
+          : 'Summary of Key Projects & Achievements'} <span className="text-red-500">*</span>
         </label>
         <textarea
           rows={3}

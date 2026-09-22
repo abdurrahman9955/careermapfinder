@@ -41,15 +41,16 @@ export const Topbar: React.FC<TopbarProps> = ({ onOpenMobileSidebar }) => {
        <div className="max-lg:hidden lg:flex items-center flex-grow   max-w-full mr-5">
 
                 <div className="relative w-full">
-                <Link href={{pathname:'/dashboard/settings'}}>
+               
                   <button className={`flex justify-center gap-2 p-1 px-4 md:w-80 xl:w-96  rounded-xl transition-colors duration-200
                      bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white
                      ${theme === 'dark' ? ' hover:bg-zinc-700 border border-slate-700' 
                         : 'hover:bg-zinc-100 border border-slate-300'}`}
                       title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'} >
-                    <span className='flex flex-row gap-2'> <PlusCircle className=' w-5'/>Explore New Career </span>
+                     <Link href={{pathname:'/dashboard/settings'}}>
+                       <span className='flex flex-row gap-2'> <PlusCircle className=' w-5'/>Explore New Career </span>
+                    </Link>
                   </button>
-                </Link>
               </div>
            
            

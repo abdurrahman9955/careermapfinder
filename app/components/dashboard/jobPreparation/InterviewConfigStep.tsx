@@ -24,7 +24,7 @@ export const InterviewConfigStep: React.FC<Props> = ({ formData, updateForm, isD
       {/* Primary Interview Focus */}
       <div>
         <label className={`block text-sm font-semibold mb-3 ${isDark ? 'text-slate-200' : 'text-slate-700'}`}>
-          What type of questions do you want to practice? (Select all that apply)
+          What type of questions do you want to practice? (Select all that apply) <span className="text-red-500">*</span>
         </label>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {INTERVIEW_FOCUS_OPTIONS.map((opt) => {
@@ -66,7 +66,7 @@ export const InterviewConfigStep: React.FC<Props> = ({ formData, updateForm, isD
       <div>
         <label className={`block text-sm font-semibold mb-3 
           ${isDark ? 'text-slate-200' : 'text-slate-700'}`}>
-          Choose AI Interviewer Style
+          Choose AI Interviewer Style <span className="text-red-500">*</span>
         </label>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {AI_PERSONAS.map((p) => {
@@ -110,7 +110,7 @@ export const InterviewConfigStep: React.FC<Props> = ({ formData, updateForm, isD
         <div>
           <label className={`block text-sm font-semibold mb-2
             ${isDark ? 'text-slate-200' : 'text-slate-700'}`}>
-            Estimated Mock Duration
+            Estimated Mock Duration <span className="text-red-500">*</span>
           </label>
           <div className="relative">
             <Clock className="absolute left-3 top-3.5 w-5 h-5 text-slate-400" />
@@ -147,7 +147,8 @@ export const InterviewConfigStep: React.FC<Props> = ({ formData, updateForm, isD
               <Code2 className="w-5 h-5 text-blue-500" />
               <div>
                 {/* <div className={`text-xs font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>Enable Live Code Sandbox</div> */}
-                <div className={`text-[14px] ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>Provides code editor inside interview</div>
+                <div className={`text-[14px] ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
+                Provides code editor inside interview</div>
               </div>
             </div>
             <input
@@ -163,7 +164,7 @@ export const InterviewConfigStep: React.FC<Props> = ({ formData, updateForm, isD
       {/* Target Job Description / URL optional field */}
       <div>
         <label className={`block text-sm font-semibold mb-2 ${isDark ? 'text-slate-200' : 'text-slate-700'}`}>
-          Job Description (Optional)
+          Job Description <span className="text-red-500">*</span>
         </label>
         <div className="relative">
           {/* <LinkIcon className="absolute left-3 top-3.5 w-5 h-5 text-slate-400" /> */}

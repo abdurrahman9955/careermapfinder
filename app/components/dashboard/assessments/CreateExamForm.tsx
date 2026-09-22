@@ -138,7 +138,7 @@ export default function CreateExamForm() {
                 {/* Country / State Cascade */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-medium mb-1.5">Country / Region</label>
+                    <label className="block text-xs font-medium mb-1.5">Country / Region <span className="text-red-500">*</span></label>
                     <div className="relative">
                       <select
                         value={state.selectedCountry}
@@ -164,7 +164,7 @@ export default function CreateExamForm() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium mb-1.5">State / Province (Optional)</label>
+                    <label className="block text-xs font-medium mb-1.5">State / Province <span className="text-red-500">*</span></label>
                     <div className="relative">
                       <MapPin className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
                       <input
@@ -184,7 +184,7 @@ export default function CreateExamForm() {
 
                 {/* Exam Board Options */}
                 <div>
-                  <label className="block text-xs font-medium mb-1.5">Select Exam or Board</label>
+                  <label className="block text-xs font-medium mb-1.5">Select Exam or Board <span className="text-red-500">*</span></label>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                     {(ACADEMIC_EXAMS_BY_COUNTRY[state.selectedCountry] || ACADEMIC_EXAMS_BY_COUNTRY['global']).map((exam) => (
                       <button
@@ -219,7 +219,7 @@ export default function CreateExamForm() {
 
                 {/* Stream */}
                 <div>
-                  <label className="block text-xs font-medium mb-1.5">Academic Stream</label>
+                  <label className="block text-xs font-medium mb-1.5">Academic Stream <span className="text-red-500">*</span></label>
                   <div className="flex gap-2">
                     {['Sciences', 'Commercial', 'Arts'].map((str) => (
                       <button
@@ -251,7 +251,7 @@ export default function CreateExamForm() {
                 /> */}
 
               <label className="block text-xs font-medium mb-1.5">
-               Target Subject <span className="text-slate-400 font-normal">(Write Only One) *</span>
+               Target Subject <span className="text-slate-400 font-normal">(Write Only One) <span className="text-red-500">*</span></span>
               </label>
  
               <input type="text" placeholder="Subject to practice e.g Mathematics" 
@@ -265,7 +265,8 @@ export default function CreateExamForm() {
                 
                 <div className="grid grid-cols-1 mt-4 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-medium mb-1.5">Course / Program You Want Study *</label>
+                    <label className="block text-xs font-medium mb-1.5">Course / Program You Want Study 
+                      <span className="text-red-500">*</span></label>
                     <input
                       type="text"
                       placeholder="e.g computer science"
@@ -280,10 +281,10 @@ export default function CreateExamForm() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium mb-1.5">Dream Career / Job You Want Become*</label>
+                    <label className="block text-xs font-medium mb-1.5">Dream Career / Job You Want Become <span className="text-red-500">*</span></label>
                     <input
                       type="text"
-                      placeholder="e.g doftware developer"
+                      placeholder="e.g software developer"
                       value={state.career}
                       onChange={(e) => actions.setCareer(e.target.value)}
                       className={`w-full px-4 py-3 rounded-xl border text-sm outline-none focus:ring-2 
@@ -313,7 +314,7 @@ export default function CreateExamForm() {
 
                 {/* Industry Domains */}
                 <div>
-                  <label className="block text-xs font-medium mb-2">Industry Domain</label>
+                  <label className="block text-xs font-medium mb-2">Industry Domain <span className="text-red-500">*</span></label>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     {PROFESSIONAL_DOMAINS.map((domain) => (
                       <button
@@ -336,7 +337,7 @@ export default function CreateExamForm() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-medium mb-1.5">Certification Body / Vendor</label>
+                    <label className="block text-xs font-medium mb-1.5">Certification Body / Vendor <span className="text-red-500">*</span></label>
                     <input
                       type="text"
                       placeholder="e.g. AWS, Cisco, PMI, CompTIA"
@@ -351,7 +352,7 @@ export default function CreateExamForm() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium mb-1.5">Exam Name & Code</label>
+                    <label className="block text-xs font-medium mb-1.5">Exam Name & Code <span className="text-red-500">*</span></label>
                     <input
                       type="text"
                       placeholder="e.g. Solutions Architect Associate (SAA-C03)"
@@ -369,7 +370,7 @@ export default function CreateExamForm() {
                 
                 <div className="grid grid-cols-1 mt-4 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-medium mb-1.5">Program / Course You Study At School *</label>
+                    <label className="block text-xs font-medium mb-1.5">Program / Course You Study At School <span className="text-red-500">*</span></label>
                     <input
                       type="text"
                       placeholder="e.g computer science"
@@ -384,7 +385,7 @@ export default function CreateExamForm() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium mb-1.5">Dream Career / Job You Want Become*</label>
+                    <label className="block text-xs font-medium mb-1.5">Dream Career / Job You Want Become <span className="text-red-500">*</span></label>
                     <input
                       type="text"
                       placeholder="e.g software developer"
@@ -413,7 +414,7 @@ export default function CreateExamForm() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-medium mb-1.5">Primary Objective</label>
+                <label className="block text-xs font-medium mb-1.5">Primary Objective <span className="text-red-500">*</span></label>
                 <select
                   value={state.examPurpose}
                   onChange={(e) => actions.setExamPurpose(e.target.value)}
@@ -430,7 +431,7 @@ export default function CreateExamForm() {
               </div>
 
               <div>
-                <label className="block text-xs font-medium mb-1.5">Target Score / Grade Goal</label>
+                <label className="block text-xs font-medium mb-1.5">Target Score / Grade Goal <span className="text-red-500">*</span></label>
                 <div className="relative">
                   <Target className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
                   <input
@@ -450,7 +451,7 @@ export default function CreateExamForm() {
 
             {/* AI Difficulty Selector */}
             <div>
-              <label className="block text-xs font-medium mb-1.5">AI Engine Difficulty Mode</label>
+              <label className="block text-xs font-medium mb-1.5">AI Engine Difficulty Mode <span className="text-red-500">*</span></label>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
                 {[
                   // { id: 'adaptive', label: 'Adaptive (Smart AI)' },
@@ -478,7 +479,7 @@ export default function CreateExamForm() {
             {/* Custom Prompt / Notes */}
             <div>
               <label className="block text-xs font-medium mb-1.5 -mt-2">
-                Describe Your exam In details {state.additionalNotes.length}/1000 *</label>
+                Describe Your exam In details {state.additionalNotes.length}/1000  <span className="text-red-500">*</span></label>
               <textarea
                 rows={3}
                 maxLength={1000}
@@ -497,7 +498,9 @@ export default function CreateExamForm() {
 
                <div>
               <label className="block text-xs font-medium mb-1.5 -mt-4">
-                Your Academic Background & Bio {state.background.length}/1000 *</label>
+                Your Academic Background & Bio {state.background.length}/1000 <span className="text-red-500">*</span>
+              </label>
+              
               <textarea
                 rows={3}
                 maxLength={1000}

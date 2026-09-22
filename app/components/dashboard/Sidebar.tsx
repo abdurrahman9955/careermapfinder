@@ -47,7 +47,7 @@ const NAV_ITEMS: NavItem[] = [
   },
   {
     title: 'Career Explorer',
-    href: '/dashboard?career-explorer',
+    href: '/dashboard/career-explorer',
     icon: GitCompare,
     badge: '',
     target:"", 

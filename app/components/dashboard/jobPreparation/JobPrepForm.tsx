@@ -24,7 +24,7 @@ const INITIAL_FORM_DATA: JobPrepFormData = {
   projectsOrHighlights: '',
   resumeSummary: '',
 
-  primaryFocus: ['technical_coding', 'behavioral_star'],
+  primaryFocus: ['behavioral_star'],
   targetCompanyType: 'Tech Startup',
   aiPersona: 'supportive_coach',
   interviewDurationMinutes: 30,
