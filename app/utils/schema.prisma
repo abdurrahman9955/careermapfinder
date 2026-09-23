@@ -1,0 +1,172 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum ExamCategory {
+  ACADEMIC
+  PROFESSIONAL
+}
+
+enum ExamFormat {
+  OBJECTIVE_ONLY       // Single/Multiple Choice (JAMB, SAT)
+  THEORY_ONLY          // Written/Essay/Long Answer (WAEC/NECO Paper 2)
+  HYBRID               // Mixed Choice and Theory (CBSE, ICSE, WAEC combined)
+  PRACTICAL_CODING     // Programming/Technical Tasks
+}
+
+enum QuestionType {
+  MULTIPLE_CHOICE      // Single select (A, B, C, D)
+  MULTIPLE_SELECT      // Multi-select checkboxes
+  SHORT_INPUT          // One word, line, or numerical answer
+  ESSAY_LONG_TEXT      // Long form essay, letter writing, theoretical explanation
+  CODE_EXECUTION       // Code submission with specific runtime requirements
+}
+
+enum QuestionVisualType {
+  TEXT
+  MARKDOWN
+  CODE
+  TABLE
+  IMAGE
+}
+
+enum DifficultyLevel {
+  FOUNDATIONAL
+  STANDARD
+  HIGH_DISTINCTION
+}
+
+enum ExamStatus {
+  GENERATED
+  IN_PROGRESS
+  SUBMITTED
+  EVALUATED
+}
+
+// Global Exam Master Catalog (Used for form dropdowns)
+model ExamCatalog {
+  id              String       @id @default(uuid())
+  country         String?      // Null for global professional certifications
+  state           String?      // e.g., Maharashtra, Texas (Optional)
+  name            String       // e.g., JAMB UTME, CBSE Class 12, AWS Solutions Architect
+  category        ExamCategory
+  format          ExamFormat
+  defaultTimeLimit Int         // Time in minutes
+  maxScore        Int
+  streams         String[]     // e.g., ["Science", "Commerce", "Arts"]
+  subjects        String[]     // Available subjects
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+
+  sessions        ExamSession[]
+}
+
+// Represents a user's generated exam attempt
+model ExamSession {
+  id                  String          @id @default(uuid())
+  userId              String
+  category            ExamCategory
+  examCatalogId       String?
+  examCatalog         ExamCatalog?    @relation(fields: [examCatalogId], references: [id])
+  
+  // Captured User Context (Prompt Meta)
+  country             String?
+  state               String?
+  examName            String
+  stream              String?
+  subject             String
+  targetProgram       String?         // e.g., Computer Science
+  targetCareer        String?         // e.g., Software Engineer
+  primaryObjective    String?         // e.g., University Admission
+  industry            String?         // e.g., Cloud Computing
+  certVendor          String?         // e.g., AWS, Cisco
+  examDescription     String?
+  academicBackground  String?
+  
+  difficulty          DifficultyLevel
+  targetScore         Int
+  timeLimitMinutes    Int             @default(60)
+  
+  status              ExamStatus      @default(GENERATED)
+  startedAt           DateTime?
+  submittedAt         DateTime?
+  
+  questions           ExamQuestion[]
+  userResponses       UserResponse[]
+  evaluationReport    EvaluationReport?
+
+  createdAt           DateTime        @default(now())
+  updatedAt           DateTime        @updatedAt
+}
+
+// Dynamically generated questions by AI
+model ExamQuestion {
+  id               String             @id @default(uuid())
+  examSessionId    String
+  examSession      ExamSession        @relation(fields: [examSessionId], references: [id], onDelete: Cascade)
+  
+  questionNumber   Int
+  sectionTitle     String?            // e.g., "Section A: Multiple Choice", "Section B: Essay"
+  questionType     QuestionType
+  visualType       QuestionVisualType @default(TEXT)
+  
+  prompt           String             @db.Text
+  supplementaryData Json?             // Code snippets, Markdown tables, or Image URLs
+  
+  options          Json?              // Choice items: [{ label: "A", text: "..." }]
+  maxMarks         Int                @default(1)
+  
+  rubric           Json?              // Evaluation rubric for essay/short answers
+  correctAnswer    String?            // Used for deterministic grading of objective questions
+
+  userResponses    UserResponse[]
+
+  createdAt        DateTime           @default(now())
+  
+  @@index([examSessionId, questionNumber])
+}
+
+// User-submitted answers
+model UserResponse {
+  id               String       @id @default(uuid())
+  examSessionId    String
+  examSession      ExamSession  @relation(fields: [examSessionId], references: [id], onDelete: Cascade)
+  
+  questionId       String
+  question         ExamQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  
+  answerText       String?      @db.Text // Selected option ("A") or written response/code
+  selectedOptions  String[]     // Multi-select answers
+  timeSpentSeconds Int          @default(0)
+
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
+
+  @@unique([examSessionId, questionId])
+}
+
+// AI-Generated Comprehensive Evaluation & PDF Report Data Model
+model EvaluationReport {
+  id                   String      @id @default(uuid())
+  examSessionId        String      @unique
+  examSession          ExamSession @relation(fields: [examSessionId], references: [id], onDelete: Cascade)
+  
+  totalMarksObtained   Float
+  totalMaxMarks        Float
+  percentage           Float
+  grade                String?     // e.g., "A1", "Pass", "Distinction"
+  
+  overallFeedback      String      @db.Text
+  strengths            String[]
+  improvementAreas     String[]
+  
+  categoryBreakdown    Json        // Topic/Category wise performance breakdown
+  questionEvaluations  Json        // Detailed breakdown per question including feedback and model answers
+  
+  generatedAt          DateTime    @default(now())
+}

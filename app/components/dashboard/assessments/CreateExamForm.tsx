@@ -2,19 +2,7 @@
 
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import {
-  Globe,
-  MapPin,
-  GraduationCap,
-  Award,
-  Sparkles,
-  Layers,
-  Target,
-  CheckCircle2,
-  ChevronRight,
-  BrainCircuit,
-  ArrowRight
-} from 'lucide-react';
+import { ArrowRight, Award, BrainCircuit, CheckCircle2, ChevronRight, Globe, GraduationCap, Layers, MapPin, Target } from 'lucide-react';
 import { useTheme } from '../../../context/ThemeContext';
 import { useCreateExamForm } from './useCreateExamForm';
 //import { SubjTagInput } from './SubjTagInput';
