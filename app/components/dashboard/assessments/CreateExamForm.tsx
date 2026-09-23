@@ -28,11 +28,7 @@ export default function CreateExamForm() {
         
         {/* Header */}
         <div className="text-center space-y-4">
-          {/* <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full 
-          text-xs font-semibold tracking-wide uppercase bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">
-            <Sparkles className="w-4 h-4" />
-            AI Exam Engine
-          </div> */}
+        
           <h1 className="text-xl sm:text-3xl font-extrabold tracking-tight">
             Configure Your Exam Setup
           </h1>
