@@ -192,7 +192,8 @@ export default function ExamPracticePage() {
           {catalog.map((item) => (
             <div
               key={item.id}
-              className={`p-6 rounded-2xl border shadow-xl backdrop-blur-md transition-all flex flex-col justify-between space-y-6 ${
+              className={`p-6 rounded-2xl border shadow-xl backdrop-blur-md transition-all flex flex-col 
+                justify-between space-y-6 ${
                 isDark
                   ? 'bg-slate-950 border-slate-700 shadow-slate-950/50 hover:border-slate-700'
                   : 'bg-white/90 border-slate-300 shadow-slate-200/50 hover:border-slate-400'

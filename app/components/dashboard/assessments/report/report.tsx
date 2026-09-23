@@ -1,5 +1,4 @@
 'use client';
-
 import React, { useState, useEffect } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { ComprehensiveEvaluationReport } from '@/app/utils/assessments/mock/exam';
@@ -30,9 +29,6 @@ export default function ExamReportPage() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const sessionId = searchParams.get('sessionId');
-  //const sessionId = 'sess_jamb_001'; 
-  //sess_jamb_001 sess_waec_002 sess_cbse_003 sess_jee_004 sess_aws_005 sess_sec_006
-
   const { theme } = useTheme();
   const isDark = theme === 'dark';
 
@@ -94,7 +90,8 @@ export default function ExamReportPage() {
       <div className={`min-h-screen flex flex-col items-center justify-center p-6 transition-colors duration-300 ${
         isDark ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'
       }`}>
-        <div className="flex items-center gap-3 p-4 rounded-2xl bg-sky-500/10 border border-sky-500/20 text-sky-500 font-semibold">
+        <div className="flex items-center gap-3 p-4 rounded-2xl bg-sky-500/10 border border-sky-500/20 text-sky-500 
+         font-semibold">
           <Loader2 className="w-6 h-6 animate-spin" />
           <span>Generating detailed performance analytics report...</span>
         </div>
@@ -142,7 +139,8 @@ export default function ExamReportPage() {
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 print:hidden">
           <button
             onClick={() => router.push('/dashboard/assessments')}
-            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm border transition-all cursor-pointer ${
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm border transition-all
+               cursor-pointer ${
               isDark
                 ? 'border-slate-700 hover:bg-slate-900 text-slate-300'
                 : 'border-slate-300 hover:bg-slate-100 text-slate-700'
@@ -171,7 +169,8 @@ export default function ExamReportPage() {
           
           {/* Main Banner / Score Overview */}
           <div
-            className={`p-6 sm:p-8 rounded-2xl border shadow-xl backdrop-blur-md relative overflow-hidden transition-all ${
+            className={`p-6 sm:p-8 rounded-2xl border shadow-xl backdrop-blur-md relative overflow-hidden 
+              transition-all ${
               isDark
                 ? 'bg-slate-900/80 border-slate-800 shadow-slate-950/50'
                 : 'bg-white/90 border-slate-300 shadow-slate-200/50'
