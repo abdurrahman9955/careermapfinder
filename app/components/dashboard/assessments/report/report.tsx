@@ -1,5 +1,7 @@
 'use client';
 export const dynamic = 'force-dynamic';
+export const fetchCache = 'force-no-store';
+
 import React, { useState, useEffect } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { ComprehensiveEvaluationReport } from '@/app/utils/assessments/mock/exam';
@@ -24,12 +26,12 @@ import {
   HelpCircle,
 } from 'lucide-react';
 
-import { getEvaluationReportBySessionId } from '@/app/utils/assessments/mock/evaluationReportsRegistry';
+///import { getEvaluationReportBySessionId } from '@/app/utils/assessments/mock/evaluationReportsRegistry';
 
 export default function ExamReportPage() {
   const searchParams = useSearchParams();
   const router = useRouter();
-  const sessionId = searchParams.get('sessionId');
+  const sessionId = searchParams.get('sessionId'); 
   const { theme } = useTheme();
   const isDark = theme === 'dark';
 
@@ -54,8 +56,17 @@ export default function ExamReportPage() {
         // Simulate async data loading delay (600ms) directly in the browser
         await new Promise((resolve) => setTimeout(resolve, 600));
 
+
+      const module = await import(
+        '@/app/utils/assessments/mock/evaluationReportsRegistry'
+      );
+
+
         // Direct call to frontend evaluation data file
-        const reportData = getEvaluationReportBySessionId(sessionId);
+        // const reportData = getEvaluationReportBySessionId(sessionId);
+
+         const reportData = module.getEvaluationReportBySessionId(sessionId);
+
 
         if (!reportData) {
           throw new Error(`Evaluation report for session '${sessionId}' was not found.`);

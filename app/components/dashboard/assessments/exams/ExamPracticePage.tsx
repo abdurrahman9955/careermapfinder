@@ -1,4 +1,6 @@
 'use client';
+export const dynamic = 'force-dynamic';
+export const fetchCache = 'force-no-store';
 import React, { useState, useEffect } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { useTheme } from '@/app/context/ThemeContext';
@@ -14,7 +16,8 @@ import {
   ArrowRight, 
   ExternalLink
 } from 'lucide-react';
-import { getExamSessionById, listAllExamCatalogItems } from '@/app/utils/assessments/mock/examSessionsRegistry';
+
+//import { getExamSessionById, listAllExamCatalogItems } from '@/app/utils/assessments/mock/examSessionsRegistry';
 
 interface ExamCatalogItem {
   id: string;
@@ -46,38 +49,72 @@ export default function ExamPracticePage() {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
   // 1. DIRECT CLIENT-SIDE FETCH IN USEEFFECT
+  // useEffect(() => {
+  //   async function loadExamData() {
+  //     setLoading(true);
+  //     setError(null);
+
+  //     try {
+  //       // Simulate async data loading delay (500ms) directly in the browser
+  //       await new Promise((resolve) => setTimeout(resolve, 500));
+
+  //       if (examId) {
+  //         // Direct call to frontend data file
+  //         const sessionData = getExamSessionById(examId);
+
+  //         if (!sessionData) {
+  //           throw new Error(`Exam session '${examId}' was not found.`);
+  //         }
+
+  //         setSession(sessionData);
+  //       } else {
+  //         // Direct call to frontend catalog list
+  //         const catalogItems = listAllExamCatalogItems();
+  //         setCatalog(catalogItems);
+  //       }
+  //     } catch (err: any) {
+  //       setError(err.message || 'An unexpected error occurred while loading exam data.');
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   }
+
+  //   loadExamData();
+  // }, [examId]);
+
   useEffect(() => {
-    async function loadExamData() {
-      setLoading(true);
-      setError(null);
+  async function loadExamData() {
+    setLoading(true);
+    setError(null);
 
-      try {
-        // Simulate async data loading delay (500ms) directly in the browser
-        await new Promise((resolve) => setTimeout(resolve, 500));
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 500));
 
-        if (examId) {
-          // Direct call to frontend data file
-          const sessionData = getExamSessionById(examId);
+      const module = await import(
+        '@/app/utils/assessments/mock/examSessionsRegistry'
+      );
 
-          if (!sessionData) {
-            throw new Error(`Exam session '${examId}' was not found.`);
-          }
+      if (examId) {
+        const sessionData = module.getExamSessionById(examId);
 
-          setSession(sessionData);
-        } else {
-          // Direct call to frontend catalog list
-          const catalogItems = listAllExamCatalogItems();
-          setCatalog(catalogItems);
+        if (!sessionData) {
+          throw new Error(`Exam session '${examId}' was not found.`);
         }
-      } catch (err: any) {
-        setError(err.message || 'An unexpected error occurred while loading exam data.');
-      } finally {
-        setLoading(false);
-      }
-    }
 
-    loadExamData();
-  }, [examId]);
+        setSession(sessionData);
+      } else {
+        const catalogItems = module.listAllExamCatalogItems();
+        setCatalog(catalogItems);
+      }
+    } catch (err: any) {
+      setError(err.message || 'An unexpected error occurred while loading exam data.');
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  loadExamData();
+}, [examId]);
 
   // 2. DIRECT CLIENT-SIDE SUBMISSION
   const handleSubmitExam = async (responses: Record<string, UserResponseSubmission>) => {
