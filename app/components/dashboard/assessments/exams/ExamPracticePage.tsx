@@ -17,7 +17,7 @@ import {
   ExternalLink
 } from 'lucide-react';
 
-//import { getExamSessionById, listAllExamCatalogItems } from '@/app/utils/assessments/mock/examSessionsRegistry';
+import { getExamSessionById, listAllExamCatalogItems } from '@/app/utils/assessments/mock/examSessionsRegistry';
 
 interface ExamCatalogItem {
   id: string;
@@ -49,84 +49,48 @@ export default function ExamPracticePage() {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
   // 1. DIRECT CLIENT-SIDE FETCH IN USEEFFECT
-  // useEffect(() => {
-  //   async function loadExamData() {
-  //     setLoading(true);
-  //     setError(null);
-
-  //     try {
-  //       // Simulate async data loading delay (500ms) directly in the browser
-  //       await new Promise((resolve) => setTimeout(resolve, 500));
-
-  //       if (examId) {
-  //         // Direct call to frontend data file
-  //         const sessionData = getExamSessionById(examId);
-
-  //         if (!sessionData) {
-  //           throw new Error(`Exam session '${examId}' was not found.`);
-  //         }
-
-  //         setSession(sessionData);
-  //       } else {
-  //         // Direct call to frontend catalog list
-  //         const catalogItems = listAllExamCatalogItems();
-  //         setCatalog(catalogItems);
-  //       }
-  //     } catch (err: any) {
-  //       setError(err.message || 'An unexpected error occurred while loading exam data.');
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   }
-
-  //   loadExamData();
-  // }, [examId]);
-
   useEffect(() => {
-  async function loadExamData() {
-    setLoading(true);
-    setError(null);
+    async function loadExamData() {
+      setLoading(true);
+      setError(null);
 
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 500));
+      try {
+        // Simulate async data loading delay (500ms) directly in the browser
+        await new Promise((resolve) => setTimeout(resolve, 500));
 
-      const module = await import(
-        '@/app/utils/assessments/mock/examSessionsRegistry'
-      );
+        if (examId) {
+          // Direct call to frontend data file
+          const sessionData = getExamSessionById(examId);
 
-      if (examId) {
-        const sessionData = module.getExamSessionById(examId);
+          if (!sessionData) {
+            throw new Error(`Exam session '${examId}' was not found.`);
+          }
 
-        if (!sessionData) {
-          throw new Error(`Exam session '${examId}' was not found.`);
+          setSession(sessionData);
+        } else {
+          // Direct call to frontend catalog list
+          const catalogItems = listAllExamCatalogItems();
+          setCatalog(catalogItems);
         }
-
-        setSession(sessionData);
-      } else {
-        const catalogItems = module.listAllExamCatalogItems();
-        setCatalog(catalogItems);
+      } catch (err: any) {
+        setError(err.message || 'An unexpected error occurred while loading exam data.');
+      } finally {
+        setLoading(false);
       }
-    } catch (err: any) {
-      setError(err.message || 'An unexpected error occurred while loading exam data.');
-    } finally {
-      setLoading(false);
     }
-  }
 
-  loadExamData();
-}, [examId]);
+    loadExamData();
+  }, [examId]);
 
-  // 2. DIRECT CLIENT-SIDE SUBMISSION
+
   const handleSubmitExam = async (responses: Record<string, UserResponseSubmission>) => {
     if (!session) return;
     setIsSubmitting(true);
 
     try {
-      // Simulate submission & evaluation delay (800ms)
+      
       await new Promise((resolve) => setTimeout(resolve, 800));
 
-      // Redirect directly to the report page with the session ID
-      //router.push(`/exams/report?sessionId=${session.id}`);
     } catch (err: any) {
       alert(`Submission Error: ${err.message}`);
       setIsSubmitting(false);
@@ -215,15 +179,7 @@ export default function ExamPracticePage() {
       isDark ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'
     }`}>
       <div className="max-w-7xl mx-auto space-y-8">
-        {/* Page Title Header */}
-        {/* <div className="space-y-2">
-          <div className="flex items-center gap-2 text-sky-500 font-bold text-xs uppercase tracking-wider">
-            <Sparkles className="w-4 h-4" /> Career Map Finder Mock Exams
-          </div>
-          <h1 className="text-3xl font-extrabold tracking-tight">Available Global Exams Catalog</h1>
-          <p className="text-slate-400 text-sm">Select an official exam session to begin your practice test.</p>
-        </div> */}
-
+      
         {/* Catalog Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {catalog.map((item) => (
