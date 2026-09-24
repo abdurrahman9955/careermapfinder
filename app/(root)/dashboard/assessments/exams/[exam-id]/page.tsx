@@ -1,11 +1,11 @@
 import { DashboardLayoutWrapper } from "@/app/components/dashboard/DashboardLayoutWrapper";
-import ExamPracticePageMain from "@/app/components/dashboard/assessments/exams/ExamPracticePageMain";
+import ExamPracticePage from "@/app/components/dashboard/assessments/exams/ExamPracticePage";
 
 const page = () => {
   return (
     <div>
     <DashboardLayoutWrapper>
-      <ExamPracticePageMain />
+      <ExamPracticePage />
     </DashboardLayoutWrapper>
     </div>
   )

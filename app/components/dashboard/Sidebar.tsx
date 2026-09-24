@@ -39,7 +39,7 @@ interface NavItem {
 const NAV_ITEMS: NavItem[] = [
   {
     title: 'Main Dashboard',
-    href: '/dashboard?career-explorer',
+    href: '/dashboard',
     icon: LayoutDashboard,
     badge: '',
     target:"", 

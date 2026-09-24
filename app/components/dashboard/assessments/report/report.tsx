@@ -1,9 +1,6 @@
 'use client';
-export const dynamic = 'force-dynamic';
-export const fetchCache = 'force-no-store';
-
-import { useState, useEffect } from 'react';
-import { useSearchParams, useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { useParams, useRouter } from 'next/navigation';
 import { ComprehensiveEvaluationReport } from '@/app/utils/assessments/mock/exam';
 import { useTheme } from '@/app/context/ThemeContext';
 import { Award, BarChart3, CheckCircle2, XCircle, AlertTriangle, Download, ArrowLeft, Loader2, 
@@ -12,9 +9,11 @@ Check, TrendingUp, Target, Sparkles, ChevronDown, ChevronUp, FileText, HelpCircl
 import { getEvaluationReportBySessionId } from '@/app/utils/assessments/mock/evaluationReportsRegistry';
 
 export default function ExamReportPage() {
-  const searchParams = useSearchParams();
+
   const router = useRouter();
-  const sessionId = searchParams.get('sessionId'); 
+  const params = useParams();
+  const sessionId = params['report-id'] as string;
+
   const { theme } = useTheme();
   const isDark = theme === 'dark';
 
@@ -24,7 +23,6 @@ export default function ExamReportPage() {
   const [isExporting, setIsExporting] = useState<boolean>(false);
   const [expandedQuestionId, setExpandedQuestionId] = useState<string | null>(null);
 
-// DIRECT CLIENT-SIDE FETCH IN USEEFFECT
   useEffect(() => {
     async function loadReport() {
       if (!sessionId) {
@@ -36,7 +34,6 @@ export default function ExamReportPage() {
       try {
         setLoading(true);
 
-        // Simulate async data loading delay (600ms) directly in the browser
         await new Promise((resolve) => setTimeout(resolve, 600));
 
         const reportData = getEvaluationReportBySessionId(sessionId);
@@ -56,7 +53,6 @@ export default function ExamReportPage() {
     loadReport();
   }, [sessionId]);
 
-  // 2. Trigger Client-Side Print to PDF Engine
   const handleDownloadPDF = () => {
     setIsExporting(true);
     setTimeout(() => {
@@ -69,22 +65,19 @@ export default function ExamReportPage() {
     setExpandedQuestionId((prev) => (prev === qId ? null : qId));
   };
 
-  // --- STATE 1: LOADING STATE ---
   if (loading) {
     return (
       <div className={`min-h-screen flex flex-col items-center justify-center p-6 transition-colors duration-300 ${
-        isDark ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'
-      }`}>
-        <div className="flex items-center gap-3 p-4 rounded-2xl bg-sky-500/10 border border-sky-500/20 text-sky-500 
-         font-semibold">
+        isDark ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'}`}>
+        <div className="flex items-center gap-3 p-4 rounded-2xl bg-indigo-500/10 
+          border border-indigo-500/20 text-indigo-500  font-semibold">
           <Loader2 className="w-6 h-6 animate-spin" />
-          <span>Generating detailed performance analytics report...</span>
+          <span>Performance analytics report...</span>
         </div>
       </div>
     );
   }
 
-  // --- STATE 2: ERROR STATE ---
   if (error || !report) {
     return (
       <div className={`min-h-screen flex flex-col items-center justify-center p-6 transition-colors duration-300 ${
@@ -97,13 +90,13 @@ export default function ExamReportPage() {
             <AlertTriangle className="w-6 h-6" />
           </div>
           <h2 className="text-xl font-bold">Report Not Found</h2>
-          <p className="text-sm text-slate-400">{error || 'Unable to display evaluation analytics.'}</p>
+          <p className="text-sm text-slate-400">{error || 'Unable to display reports.'}</p>
           <button
-            onClick={() => router.push('/exams')}
-            className="w-full py-3 rounded-xl bg-sky-600 hover:bg-sky-500 text-white 
+            onClick={() => router.push('/dashboard')}
+            className="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white 
             font-semibold text-sm transition-all shadow-md cursor-pointer"
           >
-            Return to Exam Catalog
+            Return to Dashboard
           </button>
         </div>
       </div>
@@ -331,7 +324,6 @@ export default function ExamReportPage() {
             </div>
           </div>
 
-          {/* Section: Question-by-Question Evaluation Accordion */}
           <div
             className={`p-6 sm:p-8 rounded-2xl border shadow-xl backdrop-blur-md space-y-6 transition-all ${
               isDark
@@ -360,7 +352,7 @@ export default function ExamReportPage() {
                       isDark ? 'border-slate-800 bg-slate-950/50' : 'border-slate-200 bg-white'
                     }`}
                   >
-                    {/* Accordion Header */}
+                   
                     <button
                       onClick={() => toggleQuestionExpand(q.questionId)}
                       className={`w-full flex items-center justify-between p-4 text-left transition-colors cursor-pointer ${
@@ -408,8 +400,7 @@ export default function ExamReportPage() {
                     {isExpanded && (
                       <div className={`p-4 border-t space-y-4 text-xs leading-relaxed ${
                         isDark ? 'border-slate-700 bg-slate-900/40 text-slate-300' 
-                        : 'border-slate-300 bg-slate-50 text-slate-800'
-                      }`}>
+                        : 'border-slate-300 bg-slate-50 text-slate-800' }`}>
                         {/* Submitted Answer vs Correct/Model Answer */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div className={`p-3 rounded-lg border ${isDark ? 'bg-slate-950 border-slate-700' 
@@ -430,7 +421,6 @@ export default function ExamReportPage() {
                           )}
                         </div>
 
-                        {/* AI Evaluator Feedback */}
                         <div className="p-3 rounded-lg border border-sky-500/20 bg-sky-500/5 text-sky-600">
                           <span className="font-bold text-sky-600 block uppercase tracking-wider text-[10px] mb-1">
                             Evaluator Feedback
