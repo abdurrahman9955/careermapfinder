@@ -151,7 +151,7 @@ export default function ExamPracticePageMain() {
 
                  <div className="flex justify-between -mt-4  gap-2 text-xs font-medium ">
                   <span className="flex items-center gap-1.5 line-clamp-1 leading-snug">
-                    <BookOpen className="w-4 h-4 text-slate-00" />Exam Subject: {item.subject}
+                    <BookOpen className="w-4 h-4 text-slate-00" /><span className='line-clamp-1 leading-relaxed'>Exam Subject: {item.subject}</span>
                   </span>
                 </div> 
 
