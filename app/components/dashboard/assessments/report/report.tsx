@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { ComprehensiveEvaluationReport } from '@/app/utils/assessments/mock/exam';
 import { useTheme } from '@/app/context/ThemeContext';
-import { Award, BarChart3, CheckCircle2, XCircle, AlertTriangle, Download, ArrowLeft, Loader2, 
-Check, TrendingUp, Target, Sparkles, ChevronDown, ChevronUp, FileText, HelpCircle } from 'lucide-react';
+import { Award, BarChart3, CheckCircle2, AlertTriangle, ArrowLeft, Loader2, 
+Check, TrendingUp, Target, Sparkles, ArrowRight } from 'lucide-react';
 
 import { getEvaluationReportBySessionId } from '@/app/utils/assessments/mock/evaluationReportsRegistry';
 
@@ -21,8 +21,7 @@ export default function ExamReportPage() {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [isExporting, setIsExporting] = useState<boolean>(false);
-  const [expandedQuestionId, setExpandedQuestionId] = useState<string | null>(null);
-
+ 
   useEffect(() => {
     async function loadReport() {
       if (!sessionId) {
@@ -59,10 +58,6 @@ export default function ExamReportPage() {
       window.print();
       setIsExporting(false);
     }, 300);
-  };
-
-  const toggleQuestionExpand = (qId: string) => {
-    setExpandedQuestionId((prev) => (prev === qId ? null : qId));
   };
 
   if (loading) {
@@ -111,12 +106,12 @@ export default function ExamReportPage() {
         isDark ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'
       }`}
     >
-      <div className="max-w-7xl mx-auto space-y-8 print:p-0 print:m-0 print:max-w-none">
+      <div className="max-w-7xl mx-auto space-y-6 print:p-0 print:m-0 print:max-w-none">
         
         {/* Navigation & PDF Download Header (Hidden on Print) */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 print:hidden">
+        <div className="flex flex-col sm:flex-row max-sm:hidden items-start sm:items-center justify-between gap-4 print:hidden">
           <button
-            onClick={() => router.push('/dashboard/assessments')}
+            onClick={() => router.push('/dashboard')}
             className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm border transition-all
                cursor-pointer ${
               isDark
@@ -124,10 +119,10 @@ export default function ExamReportPage() {
                 : 'border-slate-300 hover:bg-slate-100 text-slate-700'
             }`}
           >
-            <ArrowLeft className="w-4 h-4" /> Practice Another Exam
+            <ArrowLeft className="w-4 h-4" /> Go Back to Dashboard
           </button>
 
-          <button
+          {/* <button
             onClick={handleDownloadPDF}
             disabled={isExporting}
             className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-500 
@@ -139,11 +134,24 @@ export default function ExamReportPage() {
               <Download className="w-4 h-4" />
             )}
             Download PDF Report
+          </button> */}
+
+           <button
+            onClick={() => router.push('/dashboard/assessments')}
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm border transition-all
+               cursor-pointer ${
+              isDark
+                ? 'border-slate-700 hover:bg-slate-900 text-slate-300'
+                : 'border-slate-300 hover:bg-slate-100 text-slate-700'
+            }`}
+          >
+            Practice Another Exam <ArrowRight className="w-4 h-4" />
           </button>
+
         </div>
 
         {/* Printable Analytics Container */}
-        <div id="pdf-report-container" className="space-y-8">
+        <div id="pdf-report-container" className="space-y-6">
           
           {/* Main Banner / Score Overview */}
           <div
@@ -164,7 +172,7 @@ export default function ExamReportPage() {
                     Official Evaluation Report
                   </span>
                   {report.grade && (
-                    <span className="px-3 py-1 rounded-lg text-xs font-bold bg-amber-500/10 
+                    <span className="px-3 max-sm:hidden py-1 rounded-lg text-xs font-bold bg-amber-500/10 
                     text-amber-500 border border-amber-500/20">
                       Grade: {report.grade}
                     </span>
@@ -324,116 +332,6 @@ export default function ExamReportPage() {
             </div>
           </div>
 
-          <div
-            className={`p-6 sm:p-8 rounded-2xl border shadow-xl backdrop-blur-md space-y-6 transition-all ${
-              isDark
-                ? 'bg-slate-900/80 border-slate-700 shadow-slate-950/50'
-                : 'bg-white/90 border-slate-300 shadow-slate-200/50'
-            }`}
-          >
-            <div className="flex items-center justify-between border-b border-inherit pb-4">
-              <div className="flex items-center gap-2 font-bold text-base">
-                <FileText className="w-5 h-5 text-sky-500" /> Question Audit
-              </div>
-              <span className="text-xs font-semibold ">
-                {report.questionEvaluations.length} Questions Evaluated
-              </span>
-            </div>
-
-            <div className="space-y-4">
-              {report.questionEvaluations.map((q) => {
-                const isExpanded = expandedQuestionId === q.questionId;
-                const userAnsText = Array.isArray(q.userAnswer) ? q.userAnswer.join(', ') : q.userAnswer || 'No response provided';
-
-                return (
-                  <div
-                    key={q.questionId}
-                    className={`rounded-xl border transition-all overflow-hidden ${
-                      isDark ? 'border-slate-800 bg-slate-950/50' : 'border-slate-200 bg-white'
-                    }`}
-                  >
-                   
-                    <button
-                      onClick={() => toggleQuestionExpand(q.questionId)}
-                      className={`w-full flex items-center justify-between p-4 text-left transition-colors cursor-pointer ${
-                        isDark ? 'hover:bg-slate-900/60' : 'hover:bg-slate-50'
-                      }`}
-                    >
-                      <div className="flex items-center gap-3">
-                        <div className="shrink-0">
-                          {q.isCorrect ? (
-                            <CheckCircle2 className="w-5 h-5 text-emerald-500" />
-                          ) : q.marksAwarded > 0 ? (
-                            <HelpCircle className="w-5 h-5 text-amber-500" />
-                          ) : (
-                            <XCircle className="w-5 h-5 text-rose-500" />
-                          )}
-                        </div>
-
-                        <div>
-                          <span className="font-bold text-sm">
-                            Question {q.questionNumber}
-                          </span>
-                          <span className="text-xs  block font-mono">
-                            Marks Awarded: {q.marksAwarded} / {q.maxMarks}
-                          </span>
-                        </div>
-                      </div>
-
-                      <div className="flex items-center gap-2">
-                        <span className={`px-2.5 py-1 rounded-md text-xs font-bold font-mono ${
-                          q.isCorrect
-                            ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
-                            : 'bg-rose-500/10 text-rose-400 border border-rose-500/20'
-                        }`}>
-                          {q.marksAwarded} Marks
-                        </span>
-                        {isExpanded ? (
-                          <ChevronUp className="w-4 h-4 text-slate-400" />
-                        ) : (
-                          <ChevronDown className="w-4 h-4 text-slate-400" />
-                        )}
-                      </div>
-                    </button>
-
-                    {/* Accordion Expanded Details */}
-                    {isExpanded && (
-                      <div className={`p-4 border-t space-y-4 text-xs leading-relaxed ${
-                        isDark ? 'border-slate-700 bg-slate-900/40 text-slate-300' 
-                        : 'border-slate-300 bg-slate-50 text-slate-800' }`}>
-                        {/* Submitted Answer vs Correct/Model Answer */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                          <div className={`p-3 rounded-lg border ${isDark ? 'bg-slate-950 border-slate-700' 
-                            : 'bg-white border-slate-200'}`}>
-                            <span className="font-bold  block uppercase tracking-wider text-[10px] mb-1">
-                              Your Submitted Response
-                            </span>
-                            <span className="font-mono text-xs">{userAnsText}</span>
-                          </div>
-
-                          {(q.correctAnswer || q.modelAnswer) && (
-                            <div className={`p-3 rounded-lg border ${isDark ? 'bg-slate-950 border-slate-800' : 'bg-white border-slate-200'}`}>
-                              <span className="font-bold text-emerald-600 block uppercase tracking-wider text-[10px] mb-1">
-                                Correct / Model Solution
-                              </span>
-                              <span className="font-mono text-xs">{q.modelAnswer || q.correctAnswer}</span>
-                            </div>
-                          )}
-                        </div>
-
-                        <div className="p-3 rounded-lg border border-sky-500/20 bg-sky-500/5 text-sky-600">
-                          <span className="font-bold text-sky-600 block uppercase tracking-wider text-[10px] mb-1">
-                            Evaluator Feedback
-                          </span>
-                          <p>{q.feedback}</p>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
         </div>
 
       </div>

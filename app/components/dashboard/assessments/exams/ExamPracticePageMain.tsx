@@ -163,12 +163,12 @@ export default function ExamPracticePageMain() {
                 </p>
 
               <div className="space-y- -mt-2 -mb-0 p-4 rounded-xl border border-inherit">
-                <div className="grid grid-cols-2 gap-2 text-xs font-medium ">
+                <div className="flex justify-between text-xs font-medium ">
                   <span className="flex items-center gap-1.5">
                     <Clock className="w-3.5 h-3.5 " />Duration {item.timeLimitMinutes} mins
                   </span>
                   <span className="flex items-center gap-1.5">
-                    <HelpCircle className="w-3.5 h-3.5" /> {item.totalQuestions} Exam Questions
+                    <HelpCircle className="w-3.5 h-3.5" /> {item.totalQuestions} Questions
                   </span>
                 </div>
               </div>

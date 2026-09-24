@@ -26,29 +26,6 @@ export const allEvaluationReports: Record<string, ComprehensiveEvaluationReport>
       { categoryName: 'Lexis & Structure', score: 26, maxScore: 30, percentage: 86.7, status: 'Strong' },
       { categoryName: 'Antonyms & Synonyms', score: 18, maxScore: 30, percentage: 60, status: 'Critical Focus' }
     ],
-    questionEvaluations: [
-      {
-        questionId: 'q_jamb_1',
-        questionNumber: 1,
-        userAnswer: 'C',
-        correctAnswer: 'C',
-        isCorrect: true,
-        marksAwarded: 2,
-        maxMarks: 2,
-        feedback: 'Correct. Option C accurately reflects the passage’s emphasis on inadequate regulatory oversight.'
-      },
-      {
-        questionId: 'q_jamb_11',
-        questionNumber: 11,
-        userAnswer: 'A',
-        correctAnswer: 'B',
-        isCorrect: false,
-        marksAwarded: 0,
-        maxMarks: 2,
-        feedback: 'Incorrect. The idiom "probe into" is the standard colocation for official investigations, not "look into" in this context.',
-        modelAnswer: 'Option B: probe'
-      }
-    ],
     generatedAt: new Date().toISOString()
   },
 
@@ -75,17 +52,6 @@ export const allEvaluationReports: Record<string, ComprehensiveEvaluationReport>
       { categoryName: 'Section A: Formal Letter / Essay', score: 38, maxScore: 50, percentage: 76, status: 'Strong' },
       { categoryName: 'Section B: Comprehension', score: 14, maxScore: 20, percentage: 70, status: 'Needs Improvement' },
       { categoryName: 'Section C: Summary Writing', score: 22, maxScore: 30, percentage: 73.3, status: 'Strong' }
-    ],
-    questionEvaluations: [
-      {
-        questionId: 'q_waec_1',
-        questionNumber: 1,
-        userAnswer: 'Dear Sir,\n\nLETTER OF COMPLAINT ON INFRASTRUCTURAL DECAY IN OUR LOCAL GOVERNMENT AREA...\n[Full Candidate Essay Response Submitted]',
-        marksAwarded: 38,
-        maxMarks: 50,
-        feedback: 'Content (8/10), Organization (8/10), Expression (15/20), Mechanical Accuracy (7/10). Excellent points raised for water and road networks.',
-        modelAnswer: 'See WAEC Official Marking Guide: Formal letter layout with 3 clear infrastructural challenges and matching actionable solutions.'
-      }
     ],
     generatedAt: new Date().toISOString()
   },
@@ -114,27 +80,6 @@ export const allEvaluationReports: Record<string, ComprehensiveEvaluationReport>
       { categoryName: 'Inorganic Chemistry', score: 18, maxScore: 19, percentage: 94.7, status: 'Strong' },
       { categoryName: 'Organic Chemistry', score: 21.5, maxScore: 28, percentage: 76.8, status: 'Needs Improvement' }
     ],
-    questionEvaluations: [
-      {
-        questionId: 'q_cbse_1',
-        questionNumber: 1,
-        userAnswer: 'D',
-        correctAnswer: 'D',
-        isCorrect: true,
-        marksAwarded: 1,
-        maxMarks: 1,
-        feedback: 'Correct. FeCl3 dissociates into 4 ions (i = 4), yielding the highest van \'t Hoff factor.'
-      },
-      {
-        questionId: 'q_cbse_22',
-        questionNumber: 22,
-        userAnswer: 'Kohlrausch law states that molar conductivity of an electrolyte at infinite dilution is the sum of limiting molar conductivities of its anions and cations.',
-        marksAwarded: 2.5,
-        maxMarks: 3,
-        feedback: 'Definition is accurate. Lost 0.5 marks for omitting the mathematical equation representation for CaCl2.',
-        modelAnswer: 'Kohlrausch’s Law: Limiting molar conductivity of an electrolyte can be represented as the sum of individual ionic contributions. Formula: Λm°(CaCl2) = λ°(Ca²⁺) + 2λ°(Cl⁻).'
-      }
-    ],
     generatedAt: new Date().toISOString()
   },
 
@@ -161,28 +106,6 @@ export const allEvaluationReports: Record<string, ComprehensiveEvaluationReport>
       { categoryName: 'Physics', score: 82, maxScore: 100, percentage: 82, status: 'Strong' },
       { categoryName: 'Chemistry', score: 76, maxScore: 100, percentage: 76, status: 'Strong' },
       { categoryName: 'Mathematics', score: 54, maxScore: 100, percentage: 54, status: 'Critical Focus' }
-    ],
-    questionEvaluations: [
-      {
-        questionId: 'q_jee_1',
-        questionNumber: 1,
-        userAnswer: 'A',
-        correctAnswer: 'A',
-        isCorrect: true,
-        marksAwarded: 4,
-        maxMarks: 4,
-        feedback: 'Correct. Work done during cyclic process equals area under the P-V curve = 400 J.'
-      },
-      {
-        questionId: 'q_jee_21',
-        questionNumber: 21,
-        userAnswer: '5',
-        correctAnswer: '5',
-        isCorrect: true,
-        marksAwarded: 4,
-        maxMarks: 4,
-        feedback: 'Correct integer value. Maximum height H = (v² sin²θ)/(2g) = (400 × 0.25)/20 = 5m.'
-      }
     ],
     generatedAt: new Date().toISOString()
   },
@@ -211,18 +134,6 @@ export const allEvaluationReports: Record<string, ComprehensiveEvaluationReport>
       { categoryName: 'Domain 2: Design Resilient Architectures (26%)', score: 210, maxScore: 260, percentage: 80.7, status: 'Strong' },
       { categoryName: 'Domain 3: Design High-Performing Architectures (24%)', score: 180, maxScore: 240, percentage: 75, status: 'Needs Improvement' },
       { categoryName: 'Domain 4: Design Cost-Optimized Architectures (20%)', score: 140, maxScore: 200, percentage: 70, status: 'Critical Focus' }
-    ],
-    questionEvaluations: [
-      {
-        questionId: 'q_aws_1',
-        questionNumber: 1,
-        userAnswer: ['A', 'C'],
-        correctAnswer: 'A,C',
-        isCorrect: true,
-        marksAwarded: 2,
-        maxMarks: 2,
-        feedback: 'Correct. SQS provides message buffering while SNS fan-out delivers notifications reliably.'
-      }
     ],
     generatedAt: new Date().toISOString()
   },
@@ -253,24 +164,10 @@ export const allEvaluationReports: Record<string, ComprehensiveEvaluationReport>
       { categoryName: 'Security Operations (28%)', score: 215, maxScore: 252, percentage: 85.3, status: 'Strong' },
       { categoryName: 'Security Program Management & Oversight (20%)', score: 150, maxScore: 180, percentage: 83.3, status: 'Needs Improvement' }
     ],
-    questionEvaluations: [
-      {
-        questionId: 'q_sec_1',
-        questionNumber: 1,
-        userAnswer: 'Configure automated Fail2ban perimeter firewall rule to block source IP 192.168.1.45',
-        marksAwarded: 5,
-        maxMarks: 5,
-        feedback: 'Correct PBQ answer. Identified both the correct perimeter control and target source IP address.',
-        modelAnswer: 'Set up automated rate-limiting / drop rule at the perimeter firewall targeting source IP 192.168.1.45 on TCP port 22.'
-      }
-    ],
     generatedAt: new Date().toISOString()
   }
 };
 
-/**
- * Retrieve an evaluation report by session ID
- */
 export const getEvaluationReportBySessionId = (sessionId: string): ComprehensiveEvaluationReport | null => {
   return allEvaluationReports[sessionId] || null;
 };

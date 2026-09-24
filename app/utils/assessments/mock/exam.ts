@@ -111,18 +111,6 @@ export interface UserResponseSubmission {
   timeSpentSeconds: number;
 }
 
-export interface QuestionEvaluation {
-  questionId: string;
-  questionNumber: number;
-  userAnswer: string | string[];
-  correctAnswer?: string;
-  isCorrect?: boolean;
-  marksAwarded: number;
-  maxMarks: number;
-  feedback: string;
-  modelAnswer?: string;
-}
-
 export interface CategoryPerformance {
   categoryName: string;
   score: number;
@@ -143,6 +131,5 @@ export interface ComprehensiveEvaluationReport {
   strengths: string[];
   improvementAreas: string[];
   categoryBreakdown: CategoryPerformance[];
-  questionEvaluations: QuestionEvaluation[];
   generatedAt: string;
 }
