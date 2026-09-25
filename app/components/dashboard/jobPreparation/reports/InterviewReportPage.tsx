@@ -111,11 +111,10 @@ export default function InterviewReportPage() {
   if (loading) {
     return (
       <div
-        className={`min-h-screen flex flex-col items-center justify-center p-6 transition-colors duration-300 ${
-          isDark ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'
-        }`}
-      >
-        <div className="flex items-center gap-3 p-4 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-500 font-semibold">
+        className={`min-h-screen flex flex-col items-center justify-center transition-colors duration-300 ${
+        isDark ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'}`} >
+        <div className="flex items-center gap-3 p-4 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 
+          text-indigo-500 font-semibold">
           <Loader2 className="w-6 h-6 animate-spin" />
           <span>evaluation analytics report...</span>
         </div>
@@ -133,7 +132,7 @@ export default function InterviewReportPage() {
       >
         <div
           className={`p-8 rounded-2xl border max-w-md w-full text-center space-y-4 shadow-xl ${
-            isDark ? 'bg-slate-900/80 border-slate-800' : 'bg-white border-slate-300'
+            isDark ? 'bg-slate-900/80 border-slate-700' : 'bg-white border-slate-300'
           }`}
         >
           <div className="w-12 h-12 rounded-full bg-red-500/10 text-red-500 flex items-center justify-center mx-auto">
@@ -143,8 +142,8 @@ export default function InterviewReportPage() {
           <p className="text-sm text-slate-400">{error || 'Unable to display evaluation analytics.'}</p>
           <button
             onClick={() => router.push('/dashboard/job-preparation')}
-            className="w-full py-3 rounded-xl bg-indigo-700 hover:bg-indigo-600 text-white font-semibold text-sm transition-all shadow-md cursor-pointer"
-          >
+            className="w-full py-3 rounded-xl bg-indigo-700 hover:bg-indigo-600 
+            text-white font-semibold text-sm transition-all shadow-md cursor-pointer">
             Return to Interview Catalog
           </button>
         </div>

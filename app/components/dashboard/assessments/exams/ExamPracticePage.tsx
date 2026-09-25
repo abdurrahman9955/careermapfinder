@@ -64,7 +64,7 @@ export default function ExamPracticePage() {
 
   if (loading) {
     return (
-      <div className={`min-h-screen flex flex-col items-center justify-center p-6 transition-colors duration-300 ${
+      <div className={`min-h-screen flex flex-col items-center justify-center transition-colors duration-300 ${
         isDark ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'
       }`}>
         <div className="flex items-center gap-3 p-4 rounded-2xl bg-sky-500/10 border 
@@ -78,10 +78,10 @@ export default function ExamPracticePage() {
 
   if (error) {
     return (
-      <div className={`min-h-screen flex flex-col items-center justify-center p-6 transition-colors duration-300 ${
+      <div className={`min-h-screen flex flex-col items-center justify-center transition-colors duration-300 ${
         isDark ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'
       }`}>
-        <div className={`p-8 rounded-2xl border max-w-md w-full text-center space-y-4 shadow-xl ${
+        <div className={`p-6 rounded-2xl border max-w-md w-full text-center space-y-4 shadow-xl ${
           isDark ? 'bg-slate-900/80 border-slate-700' : 'bg-white border-slate-300'
         }`}>
           <div className="w-12 h-12 rounded-full bg-red-500/10 text-red-500 flex 
@@ -103,7 +103,7 @@ export default function ExamPracticePage() {
 
   if (isSubmitting) {
     return (
-      <div className={`min-h-screen flex flex-col items-center justify-center p-6 transition-colors duration-300 ${
+      <div className={`min-h-screen flex flex-col items-center justify-center transition-colors duration-300 ${
         isDark ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'
       }`}>
         <div className="text-center space-y-4">

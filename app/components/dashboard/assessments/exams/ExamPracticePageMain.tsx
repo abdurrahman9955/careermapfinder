@@ -69,7 +69,7 @@ export default function ExamPracticePageMain() {
 
   if (loading) {
     return (
-      <div className={`min-h-screen flex flex-col items-center justify-center p-6 transition-colors duration-300 ${
+      <div className={`min-h-screen flex flex-col items-center justify-center transition-colors duration-300 ${
         isDark ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'
       }`}>
         <div className="flex items-center gap-3 p-4 rounded-2xl bg-indigo-500/10 border 
@@ -83,11 +83,11 @@ export default function ExamPracticePageMain() {
 
   if (error) {
     return (
-      <div className={`min-h-screen flex flex-col items-center justify-center p-6 transition-colors duration-300 ${
+      <div className={`min-h-screen flex flex-col items-center justify-center transition-colors duration-300 ${
         isDark ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'
       }`}>
-        <div className={`p-8 rounded-2xl border max-w-md w-full text-center space-y-4 shadow-xl ${
-          isDark ? 'bg-slate-900/80 border-slate-800' : 'bg-white border-slate-300'
+        <div className={`p-6 rounded-2xl border max-w-md w-full text-center space-y-4 shadow-xl ${
+          isDark ? 'bg-slate-900/80 border-slate-700' : 'bg-white border-slate-300'
         }`}>
           <div className="w-12 h-12 rounded-full bg-red-500/10 text-red-500 flex items-center justify-center mx-auto">
             <AlertTriangle className="w-6 h-6" />
@@ -95,7 +95,7 @@ export default function ExamPracticePageMain() {
           <h2 className="text-xl font-bold">Unable to Load Exam</h2>
           <p className="text-sm text-slate-400">{error}</p>
           <button
-            onClick={() => router.push('/exams')}
+            onClick={() => router.push('/dashboard/assessments')}
             className="w-full py-3 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-semibold 
             text-sm transition-all shadow-md cursor-pointer" >
             Return to Exam Catalog
@@ -111,7 +111,7 @@ export default function ExamPracticePageMain() {
     }`}>
       <div className="max-w-7xl mx-auto space-y-8">
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {catalog.map((item) => (
             <div
               key={item.id}

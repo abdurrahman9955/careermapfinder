@@ -62,7 +62,7 @@ export default function ExamReportPage() {
 
   if (loading) {
     return (
-      <div className={`min-h-screen flex flex-col items-center justify-center p-6 transition-colors duration-300 ${
+      <div className={`min-h-screen flex flex-col items-center justify-center transition-colors duration-300 ${
         isDark ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'}`}>
         <div className="flex items-center gap-3 p-4 rounded-2xl bg-indigo-500/10 
           border border-indigo-500/20 text-indigo-500  font-semibold">
@@ -75,7 +75,7 @@ export default function ExamReportPage() {
 
   if (error || !report) {
     return (
-      <div className={`min-h-screen flex flex-col items-center justify-center p-6 transition-colors duration-300 ${
+      <div className={`min-h-screen flex flex-col items-center justify-center transition-colors duration-300 ${
         isDark ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'
       }`}>
         <div className={`p-8 rounded-2xl border max-w-md w-full text-center space-y-4 shadow-xl ${

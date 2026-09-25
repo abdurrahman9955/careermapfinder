@@ -38,22 +38,29 @@ export const Topbar: React.FC<TopbarProps> = ({ onOpenMobileSidebar }) => {
         </button>
 
         
-       <div className="max-lg:hidden lg:flex items-center flex-grow   max-w-full mr-5">
+       <div className="max-md:hidden md:flex items-center flex-grow   max-w-full mr-5">
 
-                <div className="relative w-full">
-               
-                  <button className={`flex justify-center gap-2 p-1 px-4 md:w-80 xl:w-96  rounded-xl transition-colors duration-200
-                     bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white
-                     ${theme === 'dark' ? ' hover:bg-zinc-700 border border-slate-700' 
-                        : 'hover:bg-zinc-100 border border-slate-300'}`}
+                <div className="relative gap-5 w-full flex justify-center items-center">
+
+                  <button className={`flex justify-center gap-2 p-1 px-4 w-48  rounded-lg
+                     ${theme === 'dark' ? 'bg-indigo-700 border border-slate-700' 
+                        : 'bg-indigo-700 border text-white border-slate-300'}`}
                       title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'} >
-                     <Link href={{pathname:'/dashboard/settings'}}>
-                       <span className='flex flex-row gap-2'> <PlusCircle className=' w-5'/>Explore New Career </span>
+                     <Link href={{pathname:'/dashboard/career-explorer'}}>
+                       <span className='flex flex-row gap-2'> <PlusCircle className=' w-5'/>Explore Career </span>
                     </Link>
                   </button>
+
+                   <button className={`flex justify-center gap-2 p-1 px-4 w-48  rounded-lg 
+                     ${theme === 'dark' ? 'bg-indigo-700 border border-slate-700' 
+                        : 'bg-indigo-600 border text-white border-slate-300'}`}
+                      title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'} >
+                     <Link href={{pathname:'/dashboard/assessments'}}>
+                       <span className='flex flex-row gap-2 '> <PlusCircle className=' w-5'/>Take Assesments</span>
+                    </Link>
+                  </button>
+
               </div>
-           
-           
         </div>
 
       </div>
@@ -61,12 +68,12 @@ export const Topbar: React.FC<TopbarProps> = ({ onOpenMobileSidebar }) => {
       {/* Right Actions Header */}
       <div className="flex items-center gap-2 sm:gap-3">
         {/* Quick Action Button hidden sm: */}
-        <button className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-gradient-to-r 
+        {/* <button className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-gradient-to-r 
         from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white text-xs 
         font-semibold shadow-md shadow-indigo-500/10 transition-all">
           <Sparkles className="w-3.5 h-3.5" />
           <span>Ask AI Advisor</span>
-        </button>
+        </button> */}
 
         {/* Theme Toggle Button */}
         <button
