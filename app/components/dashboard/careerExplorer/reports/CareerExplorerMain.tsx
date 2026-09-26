@@ -8,7 +8,13 @@ import { useTheme } from '@/app/context/ThemeContext';
 import { ComprehensiveCareerReport } from '@/app/utils/career-explorer/careerExplorer';
 import { sampleProductionCareerReport } from '@/app/utils/career-explorer/sampleCareerReport';
 
-export default function CareerExplorerCardPage() {
+
+interface ComponentProps {
+  searchQuery?: string;
+}
+
+
+export default function CareerExplorerCardPage({ searchQuery = '' }: ComponentProps) {
    const { theme } = useTheme();
    const isDark = theme === 'dark';
 
@@ -46,6 +52,19 @@ export default function CareerExplorerCardPage() {
 
     loadReports();
   }, []);
+
+
+  // Search filtering logic
+  const filteredCatalog = catalog.filter((item) => {
+    if (!searchQuery.trim()) return true;
+    const query = searchQuery.toLowerCase();
+    return (
+      item.careerName?.toLowerCase().includes(query) ||
+      item.careerOverview?.toLowerCase().includes(query) ||
+      item.hiringIndustries?.some((ind) => ind.toLowerCase().includes(query)) ||
+      item.topCountriesAbroad?.some((country) => country.toLowerCase().includes(query))
+    );
+  });
 
   // Actions
   const handleViewReport = (id: string) => {
@@ -110,12 +129,12 @@ export default function CareerExplorerCardPage() {
     
         {/* Cards Grid */}
         <AnimatePresence mode="popLayout">
-          {catalog.length > 0 ? (
+          {filteredCatalog.length > 0 ? (
             <motion.div
               layout
               className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"
             >
-              {catalog.map((item: ComprehensiveCareerReport) => (
+              {filteredCatalog.map((item: ComprehensiveCareerReport) => (
                 <motion.div
                   key={item.id}
                   layout

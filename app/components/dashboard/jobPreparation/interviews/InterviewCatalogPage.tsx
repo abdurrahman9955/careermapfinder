@@ -38,7 +38,11 @@ interface InterviewCatalogItem {
   coreSkills: string[];
 }
 
-export default function InterviewPracticePageMain() {
+interface ComponentProps {
+  searchQuery?: string;
+}
+
+export default function InterviewPracticePageMain({ searchQuery = '' }: ComponentProps) {
   const router = useRouter();
   const { theme } = useTheme();
   const isDark = theme === 'dark';
@@ -84,6 +88,16 @@ export default function InterviewPracticePageMain() {
 
     loadInterviewData();
   }, []);
+
+  const filteredCatalog = catalog.filter((item) => {
+    if (!searchQuery.trim()) return true;
+    const query = searchQuery.toLowerCase();
+    return (
+      item.targetJobTitle?.toLowerCase().includes(query) ||
+      item.industryDomain?.toLowerCase().includes(query) ||
+      item.coreSkills?.some((skill) => skill.toLowerCase().includes(query))
+    );
+  });
 
   // Format Career Stage Pill Styles
   const getStageStyle = (stage: string) => {
@@ -180,7 +194,7 @@ export default function InterviewPracticePageMain() {
       <div className="max-w-7xl mx-auto space-y-6">
        
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-          {catalog.map((item) => (
+          {filteredCatalog.map((item) => (
             <div
               key={item.id}
               className={`p-6 rounded-2xl border shadow-xl backdrop-blur-md transition-all flex flex-col justify-between space-y-6 ${

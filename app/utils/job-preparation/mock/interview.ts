@@ -113,17 +113,6 @@ export interface CandidateResponseSubmission {
   timeSpentSeconds: number;
 }
 
-export interface QuestionEvaluationItem {
-  questionId: string;
-  questionNumber: number;
-  category: QuestionCategory;
-  score: number; // 0 - 100
-  feedback: string;
-  strengthsObserved: string[];
-  missedOpportunities: string[];
-  idealAnswerOutline: string;
-}
-
 export interface CategoryBreakdownItem {
   category: QuestionCategory;
   categoryName: string;
@@ -152,6 +141,5 @@ export interface InterviewEvaluationReport {
   keyImprovementAreas: string[];
 
   categoryBreakdowns: CategoryBreakdownItem[];
-  questionEvaluations: QuestionEvaluationItem[];
   generatedAt: string;
 }

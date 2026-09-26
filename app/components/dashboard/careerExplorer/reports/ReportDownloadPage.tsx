@@ -99,7 +99,7 @@ export default function ReportDownloadPage() {
       className={`min-h-screen transition-colors duration-300 print:p-0 print:bg-white print:text-slate-900 ${
         isDark ? 'bg-slate-950 text-slate-100' : 'bg-white text-slate-900'}`} >
 
-      <div className="max-w-7xl mx-auto py-6 space-y-6">
+      <div className="max-w-7xl mx-auto space-y-6">
 
         <div ref={printRef} className="space-y-6 print:space-y-0 ">
           {/* PAGE 1: Identity & Role Blueprint */}
@@ -111,7 +111,8 @@ export default function ReportDownloadPage() {
           >
             <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
               <div className="md:col-span-2 space-y-4">
-                <div className="p-4 -mt-3 rounded-xl bg-indigo-500/10 border border-indigo-500/20">
+                <div className={`p-4 -mt-3 rounded-xl border 
+                  ${isDark ? 'border-slate-700' : 'border-slate-300'} `}>
                   <h3 className="text-xl font-bold text-indigo-600 mb-2">
                     {report.careerName || 'N/A'}
                   </h3>
@@ -1097,7 +1098,7 @@ function SectionContainer({
   return (
     <div
       data-a4-page={pageNum}
-      className={`a4-page-section p-6 rounded-2xl border shadow-xl transition-all space-y-6 ${
+      className={`a4-page-section p-6 rounded-2xl border transition-all space-y-6 ${
         isDark
           ? 'bg-slate-900/90 border-slate-700 text-slate-100'
           : 'bg-white border-slate-300 text-slate-900'
@@ -1106,13 +1107,13 @@ function SectionContainer({
       <div className={`flex items-center justify-between border-b pb-4 
         ${ isDark ? 'border-slate-700' : 'border-slate-300'}`}>
         <div>
-          <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-500">
+          {/* <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-500">
             Page {pageNum} of {totalPages}
-          </span>
-          <h2 className="text-lg font-bold tracking-tight">{title}</h2>
+          </span> */}
+          <h2 className="text-[13px] font-bold tracking-tight">{title}</h2>
         </div>
-        <div className="text-[10px] font-semibold px-2.5 py-1 rounded-md bg-slate-500/10 text-slate-400">
-          A4 Print Standard
+        <div className="text-[13px] font-semibold px-2.5 py-1 rounded-md">
+          CareerMapFinder 
         </div>
       </div>
       <div className="pt-2">{children}</div>

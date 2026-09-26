@@ -140,7 +140,7 @@ export default function CareerReportDetailPage() {
           >
             <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
               <div className="md:col-span-2 space-y-4">
-                <div className="p-4 -mt-3 rounded-xl bg-indigo-500/10 border border-indigo-500/20">
+                <div className={`p-4 -mt-3 rounded-xl border ${isDark ? 'border-slate-700' : 'border-slate-300'} `}>
                   <h3 className="text-xl font-bold text-indigo-600 mb-2">
                     {report.careerName || 'N/A'}
                   </h3>
@@ -1138,10 +1138,10 @@ function SectionContainer({
           <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-500">
             Page {pageNum} of {totalPages}
           </span>
-          <h2 className="text-lg font-bold tracking-tight">{title}</h2>
+          <h2 className="text-[13px] font-bold tracking-tight">{title}</h2>
         </div>
-        <div className="text-[10px] font-semibold px-2.5 py-1 rounded-md bg-slate-500/10 text-slate-400">
-          A4 Print Standard
+        <div className="text-[13px] font-semibold px-2.5 py-1 rounded-md">
+          CareerMapFinder 
         </div>
       </div>
       <div className="pt-2">{children}</div>

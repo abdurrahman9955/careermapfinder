@@ -20,7 +20,13 @@ interface ExamCatalogItem {
   examDescription:string;
 }
 
-export default function ExamPracticePageMain() {
+
+interface ComponentProps {
+  searchQuery?: string;
+}
+
+
+export default function ExamPracticePageMain({ searchQuery = '' }: ComponentProps) {
   const router = useRouter();
   const { theme } = useTheme();
   const isDark = theme === 'dark';
@@ -49,6 +55,15 @@ export default function ExamPracticePageMain() {
     loadExamData();
   }, []);
 
+  const filteredCatalog = catalog.filter((item) => {
+    if (!searchQuery.trim()) return true;
+    const query = searchQuery.toLowerCase();
+    return (
+      item.examName?.toLowerCase().includes(query) ||
+      item.subject?.toLowerCase().includes(query) ||
+      item.examDescription?.toLowerCase().includes(query)
+    );
+  });
 
     const getTypeStyle = (type: string) => {
     switch (type) {
@@ -112,7 +127,7 @@ export default function ExamPracticePageMain() {
       <div className="max-w-7xl mx-auto space-y-8">
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-          {catalog.map((item) => (
+          {filteredCatalog.map((item) => (
             <div
               key={item.id}
               className={`p-6 rounded-2xl border shadow-xl backdrop-blur-md transition-all flex flex-col 

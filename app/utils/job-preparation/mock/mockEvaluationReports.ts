@@ -52,38 +52,6 @@ export const mockInterviewEvaluationReports: Record<string, InterviewEvaluationR
       },
 
     ],
-    questionEvaluations: [
-      {
-        questionId: 'q_swe_1',
-        questionNumber: 1,
-        category: 'TECHNICAL_LIVE_CODING',
-        score: 94,
-        feedback: 'Excellent implementation of sliding window. Code was idiomatic TypeScript with clean variable naming.',
-        strengthsObserved: [
-          'Handled window boundary conditions smoothly.',
-          'Explained amortized O(1) time complexity correctly.'
-        ],
-        missedOpportunities: [
-          'Could have used a deque data structure to achieve strict O(1) pop operations.'
-        ],
-        idealAnswerOutline: 'Maintain timestamp logs array per key. On check, binary search or pop items older than (now - window). If array size < limit, append now and return true.'
-      },
-      {
-        questionId: 'q_swe_2',
-        questionNumber: 2,
-        category: 'SYSTEM_DESIGN_ARCHITECTURE',
-        score: 83,
-        feedback: 'Solid global architecture setup. Handled idempotency locking and Kafka event queues effectively.',
-        strengthsObserved: [
-          'Strong selection of CockroachDB for multi-region transactional consistency.',
-          'Clear separation between sync authorization and async webhook delivery.'
-        ],
-        missedOpportunities: [
-          'Did not explicitly cover fallbacks for third-party payment processor gateway timeouts.'
-        ],
-        idealAnswerOutline: 'Enforce API idempotency at CloudFront edge using distributed Redis locks. Route to multi-region transactional store with two-phase commit, streaming async webhooks to Kafka dead-letter queues.'
-      }
-    ],
     generatedAt: new Date().toISOString()
   },
 
@@ -134,23 +102,6 @@ export const mockInterviewEvaluationReports: Record<string, InterviewEvaluationR
         status: 'Proficient'
       }
     ],
-    questionEvaluations: [
-      {
-        questionId: 'q_health_1',
-        questionNumber: 1,
-        category: 'DOMAIN_SPECIFIC',
-        score: 89,
-        feedback: 'Clear, structured explanation of FHIR resource mapping and RBAC access controls.',
-        strengthsObserved: [
-          'Correctly identified Patient and Observation resource mapping.',
-          'Emphasized immutable audit trails for PHI access.'
-        ],
-        missedOpportunities: [
-          'Omitted token-based SMART on FHIR access delegation.'
-        ],
-        idealAnswerOutline: 'Wrap legacy SQL DB with Node/Python service mapping rows to FHIR JSON. Enforce SMART on FHIR OAuth2, apply field-level masking for PHI attributes, and write all requests to an append-only audit log.'
-      }
-    ],
     generatedAt: new Date().toISOString()
   },
 
@@ -193,23 +144,6 @@ export const mockInterviewEvaluationReports: Record<string, InterviewEvaluationR
         status: 'Mastered'
       }
     ],
-    questionEvaluations: [
-      {
-        questionId: 'q_cyber_1',
-        questionNumber: 1,
-        category: 'CASE_STUDY_PROBLEM_SOLVING',
-        score: 93,
-        feedback: 'Outstanding triage skills. Demonstrated seasoned incident commander mindset.',
-        strengthsObserved: [
-          'Prioritized host isolation via EDR agent before full forensic memory acquisition.',
-          'Identified C2 destination IP and vssadmin shadow copy deletion tactics.'
-        ],
-        missedOpportunities: [
-          'Failed to mention resetting golden/silver Kerberos ticket keys.'
-        ],
-        idealAnswerOutline: '1. Isolate WEB-PROD and DB hosts via EDR. 2. Capture volatile RAM dumps. 3. Block C2 IP (185.220.101.5) at perimeter firewall. 4. Revoke compromised service account credentials and force Kerberos password reset. 5. Re-image compromised nodes.'
-      }
-    ],
     generatedAt: new Date().toISOString()
   },
 
@@ -250,23 +184,6 @@ export const mockInterviewEvaluationReports: Record<string, InterviewEvaluationR
         categoryName: 'Microcontrollers & Power Electronics',
         score: 84,
         status: 'Proficient'
-      }
-    ],
-    questionEvaluations: [
-      {
-        questionId: 'q_ee_1',
-        questionNumber: 1,
-        category: 'TECHNICAL_LIVE_CODING',
-        score: 88,
-        feedback: 'Very good implementation of lock-free ring buffer for microcontrollers.',
-        strengthsObserved: [
-          'Used volatile keyword appropriately.',
-          'Handled head/tail index wrapping correctly using bitwise mask.'
-        ],
-        missedOpportunities: [
-          'Did not add atomic memory compiler barriers for Cortex-M processors.'
-        ],
-        idealAnswerOutline: 'Define RingBuffer with volatile head/tail indices. In push ISR, check if (head + 1) & MASK == tail (full). If not full, write byte to buffer[head], update head with bitwise mask, and return true.'
       }
     ],
     generatedAt: new Date().toISOString()
@@ -312,23 +229,6 @@ export const mockInterviewEvaluationReports: Record<string, InterviewEvaluationR
         status: 'Proficient'
       }
     ],
-    questionEvaluations: [
-      {
-        questionId: 'q_fin_1',
-        questionNumber: 1,
-        category: 'CASE_STUDY_PROBLEM_SOLVING',
-        score: 86,
-        feedback: 'Accurate WACC step-by-step calculation and sound Gordon Growth sensitivity analysis.',
-        strengthsObserved: [
-          'Correct formula application for WACC = (E/V * Re) + (D/V * Rd * (1 - t)).',
-          'Accurately explained how 100 bps terminal growth increase expands Gordon Growth multiplier.'
-        ],
-        missedOpportunities: [
-          'Omitted working capital NWC reinvestment deduction in Free Cash Flow.'
-        ],
-        idealAnswerOutline: '1. Calculate WACC using CAPM. 2. Derive UFCF = EBIT*(1-t) + D&A - CapEx - ΔNWC. 3. Apply Gordon Growth Model for Terminal Value = (UFCF_n * (1+g)) / (WACC - g). 4. Discount cash flows to present value.'
-      }
-    ],
     generatedAt: new Date().toISOString()
   },
 
@@ -369,23 +269,6 @@ export const mockInterviewEvaluationReports: Record<string, InterviewEvaluationR
         categoryName: 'Data Modeling & Telemetry (dbt/SQL)',
         score: 85,
         status: 'Proficient'
-      }
-    ],
-    questionEvaluations: [
-      {
-        questionId: 'q_data_1',
-        questionNumber: 1,
-        category: 'BEHAVIORAL_STAR',
-        score: 93,
-        feedback: 'Exceptional STAR method structure. Masterfully bridged technical engineering with executive communication.',
-        strengthsObserved: [
-          'Clear delineation of conflicting MAU and Churn definitions.',
-          'Demonstrated leadership by driving cross-functional alignment and implementing dbt contracts.'
-        ],
-        missedOpportunities: [
-          'Could have cited explicit automated data quality testing frameworks.'
-        ],
-        idealAnswerOutline: 'S: Product & Marketing used conflicting churn formulas causing executive reporting friction. T: Establish a unified telemetry metric contract. A: Led metric workshops, defined standardized SQL models in dbt, and enforced CI/CD schema testing. R: Single source of truth established with 100% executive adoption.'
       }
     ],
     generatedAt: new Date().toISOString()
