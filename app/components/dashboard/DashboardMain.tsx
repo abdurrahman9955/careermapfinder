@@ -59,8 +59,8 @@ export default function DashboardMainPage() {
       <div className="max-w-7xl mx-auto space-y-6">
         
         {/* Header Header & Live Time Display */}
-        <div className={`flex flex-col md:flex-row md:items-center justify-between gap-4 border-b 
-        pb-6  ${isDark ? 'border-slate-700' : 'border-slate-300'} `}>
+        <div className={`flex flex-col md:flex-row md:items-center justify-between gap-4
+                    max-md:hidde ${isDark ? 'border-slate-700' : 'border-slate-300'} `}>
           <div>
             <h1 className="text-xl sm:text-2xl font-extrabold tracking-tight">
               Dashboard Overview
@@ -71,7 +71,7 @@ export default function DashboardMainPage() {
           </div>
 
           <div className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-medium border 
-            shadow-sm self-start md:self-auto ${
+            shadow-sm self-start md:self-auto max-md:hidden ${
             isDark ? 'bg-slate-900 border-slate-700 text-indigo-400' : 'bg-white border-slate-300 text-indigo-600'
           }`}>
             <Clock className="w-4 h-4 animate-pulse" />
@@ -80,7 +80,7 @@ export default function DashboardMainPage() {
         </div>
 
         {/* Toolbar: Category Selector & Search Bar */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="flex flex-col sm:flex-row items-center -mt-2 justify-between gap-4">
           
           {/* Tab Selector Filter */}
           <div className={`flex items-center p-1.5 rounded-2xl border w-full sm:w-auto ${
