@@ -9,6 +9,7 @@ import { InterviewConfigStep } from './InterviewConfigStep';
 import { Target, User, Sliders, ArrowRight, ArrowLeft, Sparkles, CheckCircle2 } from 'lucide-react';
 
 const INITIAL_FORM_DATA: JobPrepFormData = {
+  langauge:'English',
   targetRole: '',
   industryDomain: '',
   experienceLevel: 'entry_level',

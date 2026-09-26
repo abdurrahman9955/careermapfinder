@@ -11,6 +11,7 @@ import { PersonalBioAndQuestionsStep } from './PersonalBioAndQuestionsStep';
 import { Compass, GraduationCap, Heart, MessageSquare, ArrowRight, ArrowLeft, Sparkles, CheckCircle2 } from 'lucide-react';
 
 const INITIAL_FORM_DATA: CareerExplorerFormData = {
+  langauge:'English',
   educationLevel: 'high_school',
   academicStream: 'sciences',
   targetRoleOrDomain: '',

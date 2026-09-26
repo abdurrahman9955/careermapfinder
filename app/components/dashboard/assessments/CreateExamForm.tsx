@@ -8,6 +8,7 @@ import { useCreateExamForm } from './useCreateExamForm';
 //import { SubjTagInput } from './SubjTagInput';
 import { COUNTRIES, ACADEMIC_EXAMS_BY_COUNTRY, PROFESSIONAL_DOMAINS } from './constants';
 import { DifficultyLevel } from './types';
+import { LANGUAGES } from './languages';
 
 export default function CreateExamForm() {
   const { theme } = useTheme();
@@ -396,7 +397,37 @@ export default function CreateExamForm() {
               <BrainCircuit className="w-4 h-4 text-indigo-500" /> 3. Target Strategy & AI Tuning
             </label>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+
+              <div>
+                <label className={`block text-xs font-medium mb-1.5`}>
+                  Assessment will be in that languge <span className="text-red-500">*</span>
+                </label>
+                  <div className="relative">
+                   <Target className="absolute left-3 top-3 w-5 h-5 text-slate-400" />
+
+                  {/* [${lang.code.toUpperCase()}] */}
+                <select value={state.language}  required
+                   onChange={(e) => actions.setLangauge(e.target.value)}
+                   className={`w-full pl-10 pr-4 py-3 rounded-xl border text-sm outline-none focus:ring-2 
+                  focus:ring-indigo-500 transition appearance-none ${
+                  isDark ? 'bg-slate-950 border-slate-700 text-white'
+                  : 'bg-slate-50 border-slate-300 text-slate-900' }`} >
+                 <option value="English" disabled>  Select Language </option>
+          
+                  {LANGUAGES.map((lang) => (
+                  <option  key={lang.code}   value={lang.code + lang.name} 
+                  className={isDark ? 'bg-slate-900 text-white'  : 'bg-white text-slate-900'}>
+                  {lang.nativeName !== lang.name 
+                   ? `${lang.nativeName} — ${lang.name}`
+                   : `${lang.name}`}
+                  </option> ))}
+                </select>
+              
+                  </div>
+              </div>
+
+
               <div>
                 <label className="block text-xs font-medium mb-1.5">Primary Objective <span className="text-red-500">*</span></label>
                 <select

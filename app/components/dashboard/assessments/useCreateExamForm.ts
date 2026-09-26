@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ExamCategory, DifficultyLevel, ExamFormPayload } from './types';
 
 export function useCreateExamForm() {
+   const [language, setLangauge] = useState<string>('English');
   const [examCategory, setExamCategory] = useState<ExamCategory>('academic');
   const [selectedCountry, setSelectedCountry] = useState<string>('in');
   const [stateRegion, setStateRegion] = useState<string>('');
@@ -79,6 +80,7 @@ export function useCreateExamForm() {
 
   return {
     state: {
+      language,
       examCategory,
       selectedCountry,
       stateRegion,
@@ -100,6 +102,7 @@ export function useCreateExamForm() {
       isSubmitting,
     },
     actions: {
+      setLangauge,
       setExamCategory,
       setSelectedCountry,
       setStateRegion,

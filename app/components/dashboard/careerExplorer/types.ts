@@ -22,6 +22,7 @@ export type CareerPriority =
 
 export interface CareerExplorerFormData {
   // Step 1: User Profile & Target Aspirations
+  langauge:string;
   educationLevel: EducationLevel;
   academicStream: AcademicStream;
   targetRoleOrDomain: string; // e.g. "AI Engineer", "Neurosurgeon", "Investment Banker"

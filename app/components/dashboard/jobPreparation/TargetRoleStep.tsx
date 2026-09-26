@@ -2,7 +2,8 @@ import React from 'react';
 import { JobPrepFormData, ExperienceLevel, WorkArrangement } from './types';
 import { EXPERIENCE_LEVELS, WORK_ARRANGEMENTS } from './constants';
 import { COUNTRIES } from '../assessments/constants';
-import { Briefcase, Globe, Building, MapPin, Plane, Check } from 'lucide-react';
+import { Briefcase, Globe, Building, MapPin, Plane, Check, Target } from 'lucide-react';
+import { LANGUAGES } from '../assessments/languages';
 
 interface Props {
   formData: JobPrepFormData;
@@ -37,7 +38,35 @@ export const TargetRoleStep: React.FC<Props> = ({ formData, updateForm, isDark }
   return (
     <div className="space-y-6">
       {/* Target Role & Industry */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+
+        <div>
+          <label className={`block text-sm font-semibold mb-2 ${isDark ? 'text-slate-200' : 'text-slate-700'}`}>
+            Interview will be in that languge <span className="text-red-500">*</span>
+          </label>
+          <div className="relative">
+            <Target className="absolute left-3 top-3.5 w-5 h-5 text-slate-400" />
+                    
+                    {/* [${lang.code.toUpperCase()}] */}
+          <select value={formData.langauge}  required
+            onChange={(e) => updateForm({ langauge: e.target.value as any })}
+            className={`w-full pl-10 pr-4 py-3 rounded-xl border text-sm font-medium  
+            transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+            isDark ? 'bg-slate-800/80 border-slate-700 text-white placeholder-slate-500'
+            : 'bg-white border-slate-300 text-slate-900 placeholder-slate-400' }`} >
+            <option value="English" disabled>  Select Language </option>
+                              
+            {LANGUAGES.map((lang) => (
+             <option  key={lang.code}   value={lang.code + lang.name} 
+             className={isDark ? 'bg-slate-900 text-white'  : 'bg-white text-slate-900'}
+             >  {lang.nativeName !== lang.name 
+             ? `${lang.nativeName} — ${lang.name}`
+             : `${lang.name}`}</option> ))}
+          </select>
+
+          </div>
+        </div>
+
         <div>
           <label className={`block text-sm font-semibold mb-2 ${isDark ? 'text-slate-200' : 'text-slate-700'}`}>
             Target Job Title <span className="text-red-500">*</span>

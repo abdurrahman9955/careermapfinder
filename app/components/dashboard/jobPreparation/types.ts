@@ -21,6 +21,7 @@ export type AiInterviewerPersona = 'supportive_coach' | 'strict_technical_lead' 
 
 export interface JobPrepFormData {
   // Step 1: Role & Target Market
+  langauge:string;
   targetRole: string;
   industryDomain: string;
   experienceLevel: ExperienceLevel;
